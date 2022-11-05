@@ -11,7 +11,7 @@ import type { SxProps } from "@mui/material";
  * @link https://github.com/mui/material-ui/pull/29297
  */
 export const mergeSx = <T extends object>(
-  ...styles: (SxProps<T> | undefined)[]
+  ...styles: (SxProps<T> | false | undefined)[]
 ): SxProps<T> => {
   const ensureArray = (sx: SxProps<T>) => (Array.isArray(sx) ? sx : [sx]);
   return styles.reduce<SxProps<T>>(
