@@ -1,4 +1,4 @@
-import type {SxProps} from '@mui/material';
+import type { SxProps } from "@mui/material";
 
 /**
  * @desc Combines multiple SxProps
@@ -10,9 +10,14 @@ import type {SxProps} from '@mui/material';
  * @see https://github.com/mui/material-ui/releases/tag/v5.1.0
  * @link https://github.com/mui/material-ui/pull/29297
  */
-export const mergeSx = <T extends object>(...styles: (SxProps<T> | undefined)[]): SxProps<T> => {
+export const mergeSx = <T extends object>(
+  ...styles: (SxProps<T> | undefined)[]
+): SxProps<T> => {
   const ensureArray = (sx: SxProps<T>) => (Array.isArray(sx) ? sx : [sx]);
-  return styles.reduce<SxProps<T>>((agg, sx) => [...ensureArray(agg), ...ensureArray(sx || [])], []);
+  return styles.reduce<SxProps<T>>(
+    (agg, sx) => [...ensureArray(agg), ...ensureArray(sx || [])],
+    []
+  );
 };
 
 export const sxMerge = mergeSx;
