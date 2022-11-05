@@ -1,5 +1,7 @@
 import type { SxProps } from "@mui/material";
 
+const ensureArray = (sx: SxProps<any>) => (Array.isArray(sx) ? sx : [sx]);
+
 /**
  * @desc Combines multiple SxProps
  * @author Anna Bocharova
@@ -12,10 +14,8 @@ import type { SxProps } from "@mui/material";
  */
 export const mergeSx = <T extends object>(
   ...styles: (SxProps<T> | false | undefined)[]
-): SxProps<T> => {
-  const ensureArray = (sx: SxProps<T>) => (Array.isArray(sx) ? sx : [sx]);
-  return styles.reduce<SxProps<T>>(
+): SxProps<T> =>
+  styles.reduce<SxProps<T>>(
     (agg, sx) => [...ensureArray(agg), ...ensureArray(sx || [])],
     []
   );
-};
