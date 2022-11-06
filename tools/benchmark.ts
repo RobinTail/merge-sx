@@ -1,38 +1,32 @@
 import { SxProps, Theme } from "@mui/system";
-import { Suite } from "benchmark";
+import { Suite, Target } from "benchmark";
 import mergeSx from "../src";
 
-[10, 100, 1000, 10000].forEach((count) => {
-  const suite = new Suite(`Performance ${count}`);
+const results: Record<string, Record<number, number>> = {};
 
-  const styles = new Array<SxProps<Theme>>(count).fill({ mt: 1 });
+Promise.all(
+  [10, 100, 1000, 10000].map((count) => {
+    return new Promise((resolve) => {
+      const suite = new Suite(`Performance`);
 
-  const ensureArray = (sx: SxProps<any>) => (Array.isArray(sx) ? sx : [sx]);
-  const altMerge: typeof mergeSx = <T extends object>(
-    ...arg: (SxProps<T> | false | undefined)[]
-  ) =>
-    arg.reduce<SxProps<T>>(
-      (agg, sx) => ensureArray(agg).concat(ensureArray(sx || [])),
-      []
-    );
+      const styles = new Array<SxProps<Theme>>(count).fill({ mt: 1 });
 
-  suite
-    .add("Current implementation", () => {
-      mergeSx(...styles);
-    })
-    .add("Alternative implementation", () => {
-      altMerge(...styles);
-    })
-    .on("cycle", (event: Event) => {
-      console.log(suite.name, String(event.target));
-    })
-    .on("complete", () => {
-      console.log(
-        "Fastest in ",
-        suite.name,
-        "is",
-        suite.filter("fastest").map("name")
-      );
-    })
-    .run({ async: true });
+      suite
+        .add("Current implementation", () => {
+          mergeSx(...styles);
+        })
+        .on("cycle", (event: Event) => {
+          results[suite.name!] = {
+            ...results[suite.name!],
+            [count]: (event.target as unknown as Target).hz!,
+          };
+        })
+        .on("complete", () => {
+          resolve(suite.filter("fastest").map("name"));
+        })
+        .run({ async: true });
+    });
+  })
+).then(() => {
+  console.table(results);
 });
