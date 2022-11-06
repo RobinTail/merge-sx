@@ -40,19 +40,50 @@ jobs:
         continue-on-error: true
         with:
           github-token: ${{ secrets.github_token }}
-      - name: Integration test
+
+  integrationTest:
+    needs: build
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        mui-version: [5.10.0, latest]
+    steps:
+      - name: Get yarn cache dir
+        id: yarnCache
+        run: echo "dir=$(yarn cache dir)" >> $GITHUB_OUTPUT
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Install Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 18.x
+      - name: Cache node modules
+        uses: actions/cache@v3
+        env:
+          cache-name: cache-yarn
+        with:
+          path: ${{ steps.yarnCache.outputs.dir }}
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ matrix.node-version }}-${{ hashFiles('**/yarn.lock') }}
+      - name: Install dependencies
+        run: yarn install
+      - name: Build
+        run: yarn build
+      - name: Test
+        env:
+          MUI_VERSION: ${{ matrix.node-version }}
         run: |
-          echo '{
+          cat >integration-test/package.json <<EOF{
             "name": "integration-test",
             "version": "1.0.0",
             "license": "MIT",
             "dependencies": {
               "merge-sx": "./..",
-              "@mui/material": "5.10.12",
+              "@mui/material": "${MUI_VERSION}",
               "react": "^17.0.2",
               "react-dom": "^17.0.2"
             }
-          }' > integration-test/package.json
+          }
+          EOF
           cat integration-test/package.json
           yarn install --cwd=integration-test
           yarn intTest
