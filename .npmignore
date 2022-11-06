@@ -8,3 +8,4 @@ coverage
 .prettierignore
 tsup.config.json
 jest.config.json
+integration-test
