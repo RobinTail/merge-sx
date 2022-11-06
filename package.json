@@ -20,7 +20,8 @@
   "scripts": {
     "build": "tsup",
     "lint": "eslint src",
-    "test": "tsc --noEmit && jest",
+    "test": "tsc -p tsconfig.test.json && jest src",
+    "intTest": "jest integration-test",
     "mdfix": "prettier *.md --write"
   },
   "peerDependencies": {

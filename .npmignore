@@ -1,5 +1,6 @@
 src
 tsconfig.json
+tsconfig.test.json
 .idea
 yarn-error.log
 .github
@@ -8,3 +9,4 @@ coverage
 .prettierignore
 tsup.config.json
 jest.config.json
+integration-test

@@ -9,16 +9,16 @@ on:
     branches: [ master ]
 
 jobs:
-  build:
+  unitTest:
     runs-on: ubuntu-latest
     steps:
       - name: Get yarn cache dir
         id: yarnCache
         run: echo "dir=$(yarn cache dir)" >> $GITHUB_OUTPUT
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Install Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: 18.x
       - name: Cache node modules
@@ -27,16 +27,63 @@ jobs:
           cache-name: cache-yarn
         with:
           path: ${{ steps.yarnCache.outputs.dir }}
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ matrix.node-version }}-${{ hashFiles('**/yarn.lock') }}
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/yarn.lock') }}
       - name: Install dependencies
         run: yarn install
-      - name: Test and build
+      - name: Test
         run: |
           yarn lint
           yarn test
-          yarn build
       - name: Coveralls
         uses: coverallsapp/github-action@1.1.3
         continue-on-error: true
         with:
           github-token: ${{ secrets.github_token }}
+
+  integrationTest:
+    needs: unitTest
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        mui-version: [5.10.0, latest]
+    steps:
+      - name: Get yarn cache dir
+        id: yarnCache
+        run: echo "dir=$(yarn cache dir)" >> $GITHUB_OUTPUT
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
+      - name: Cache node modules
+        uses: actions/cache@v3
+        env:
+          cache-name: cache-yarn
+        with:
+          path: ${{ steps.yarnCache.outputs.dir }}
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/yarn.lock') }}
+      - name: Install dependencies
+        run: yarn install
+      - name: Build
+        run: yarn build
+      - name: Test
+        env:
+          MUI_VERSION: ${{ matrix.mui-version }}
+        run: |
+          cat >integration-test/package.json <<EOF
+            {
+              "name": "integration-test",
+              "version": "1.0.0",
+              "license": "MIT",
+              "dependencies": {
+                "merge-sx": "./..",
+                "@mui/material": "${MUI_VERSION}",
+                "react": "^17.0.2",
+                "react-dom": "^17.0.2"
+              }
+            }
+          EOF
+          cat integration-test/package.json
+          yarn install --cwd=integration-test
+          yarn intTest
