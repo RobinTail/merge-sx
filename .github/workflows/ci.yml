@@ -9,7 +9,7 @@ on:
     branches: [ master ]
 
 jobs:
-  build:
+  unitTest:
     runs-on: ubuntu-latest
     steps:
       - name: Get yarn cache dir
@@ -27,14 +27,13 @@ jobs:
           cache-name: cache-yarn
         with:
           path: ${{ steps.yarnCache.outputs.dir }}
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ matrix.node-version }}-${{ hashFiles('**/yarn.lock') }}
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/yarn.lock') }}
       - name: Install dependencies
         run: yarn install
-      - name: Test and build
+      - name: Test
         run: |
           yarn lint
           yarn test
-          yarn build
       - name: Coveralls
         uses: coverallsapp/github-action@1.1.3
         continue-on-error: true
@@ -42,7 +41,7 @@ jobs:
           github-token: ${{ secrets.github_token }}
 
   integrationTest:
-    needs: build
+    needs: unitTest
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -63,7 +62,7 @@ jobs:
           cache-name: cache-yarn
         with:
           path: ${{ steps.yarnCache.outputs.dir }}
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ matrix.node-version }}-${{ hashFiles('**/yarn.lock') }}
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/yarn.lock') }}
       - name: Install dependencies
         run: yarn install
       - name: Build
