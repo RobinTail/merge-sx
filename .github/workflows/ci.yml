@@ -70,7 +70,7 @@ jobs:
         run: yarn build
       - name: Test
         env:
-          MUI_VERSION: ${{ matrix.node-version }}
+          MUI_VERSION: ${{ matrix.mui-version }}
         run: |
           cat >integration-test/package.json <<EOF
             {
