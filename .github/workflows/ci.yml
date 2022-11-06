@@ -43,7 +43,6 @@ jobs:
   integrationTest:
     needs: unitTest
     runs-on: ubuntu-latest
-    continue-on-error: true # todo: remove
     strategy:
       matrix:
         mui-version:
