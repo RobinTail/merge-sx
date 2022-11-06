@@ -16,6 +16,6 @@ export const mergeSx = <T extends object>(
   ...styles: (SxProps<T> | false | undefined)[]
 ): SxProps<T> =>
   styles.reduce<SxProps<T>>(
-    (agg, sx) => [...ensureArray(agg), ...ensureArray(sx || [])],
+    (agg, sx) => ensureArray(agg).concat(ensureArray(sx || [])),
     []
   );
