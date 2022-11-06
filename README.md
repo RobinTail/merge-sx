@@ -68,3 +68,12 @@ const MyButton = ({ sx: consumerSx }: MyButtonProps) => (
   <Button sx={mergeSx(internalSx, consumerSx)}>Click me</Button>
 );
 ```
+
+### Inline Theme supplying
+
+The utility is generic and accepts the type argument.
+
+```ts
+// theme is Theme
+mergeSx<Theme>(sx1, (theme) => ({ mb: theme.spacing(1) }));
+```
