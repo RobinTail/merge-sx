@@ -42,7 +42,7 @@ jobs:
           github-token: ${{ secrets.github_token }}
       - name: Integration test
         run: |
-          echo "{ \
+          echo '{ \
             "name": "integration-test", \
             "version": "1.0.0", \
             "license": "MIT", \
@@ -52,7 +52,7 @@ jobs:
               "react": "^17.0.2", \
               "react-dom": "^17.0.2" \
             } \
-          } " > integration-test/package.json
+          }' > integration-test/package.json
           cat integration-test/package.json
           yarn install --cwd=integration-test
           yarn intTest
