@@ -13,6 +13,8 @@ yarn add merge-sx
 
 ## Usage
 
+The utility provides a very simple and semantically clean interface, that supports conditional and optional inclusions.
+
 ```ts
 // Merge your SxProps
 mergeSx(sx1, sx2 /*, ... */);
@@ -41,7 +43,7 @@ a merge under strict typing of Typescript.
 Luckily, starting version [5.1.0](https://github.com/mui/material-ui/releases/tag/v5.1.0) of MUI `SxProps`
 [can](https://github.com/mui/material-ui/blob/v5.1.0/packages/mui-system/src/styleFunctionSx/styleFunctionSx.d.ts#L60)
 also be `array`. However, nested arrays are not allowed, so this utility does exactly the flat merge, also bringing
-support for conditional inclusions, providing a very simple and semantically clean interface.
+support for conditional and optional inclusions, providing a very simple and semantically clean interface.
 
 ## Examples
 
