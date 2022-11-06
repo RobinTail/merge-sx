@@ -27,7 +27,8 @@
     "lint": "eslint src",
     "test": "tsc -p tsconfig.unit.json && jest src",
     "intTest": "tsc -p tsconfig.int.json && jest integration-test",
-    "mdfix": "prettier *.md --write"
+    "mdfix": "prettier *.md --write",
+    "postversion": "git push && git push --tags"
   },
   "peerDependencies": {
     "@mui/system": "^5.1.0"
