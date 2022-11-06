@@ -7,3 +7,4 @@ yarn-error.log
 coverage
 .prettierignore
 tsup.config.json
+jest.config.json
