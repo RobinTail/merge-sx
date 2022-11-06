@@ -5,28 +5,29 @@ import mergeSx from "../src";
 const results: Record<string, Record<number, number>> = {};
 
 Promise.all(
-  [10, 100, 1000, 10000].map((count) => {
-    return new Promise((resolve) => {
-      const suite = new Suite(`Performance`);
+  [10, 100, 1000, 10000].map(
+    (count) =>
+      new Promise((resolve) => {
+        const suite = new Suite(`Performance`);
 
-      const styles = new Array<SxProps<Theme>>(count).fill({ mt: 1 });
+        const styles = new Array<SxProps<Theme>>(count).fill({ mt: 1 });
 
-      suite
-        .add("Current implementation", () => {
-          mergeSx(...styles);
-        })
-        .on("cycle", (event: Event) => {
-          results[suite.name!] = {
-            ...results[suite.name!],
-            [count]: Math.round((event.target as unknown as Target).hz!),
-          };
-        })
-        .on("complete", () => {
-          resolve(suite.filter("fastest").map("name"));
-        })
-        .run({ async: true });
-    });
-  })
+        suite
+          .add("Current implementation", () => {
+            mergeSx(...styles);
+          })
+          .on("cycle", (event: Event) => {
+            results[suite.name!] = {
+              ...results[suite.name!],
+              [count]: Math.round((event.target as unknown as Target).hz!),
+            };
+          })
+          .on("complete", () => {
+            resolve(suite.filter("fastest").map("name"));
+          })
+          .run({ async: true });
+      })
+  )
 ).then(() => {
   console.table(results);
 });
