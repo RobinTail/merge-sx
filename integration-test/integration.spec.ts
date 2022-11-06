@@ -1,4 +1,4 @@
-import type { SxProps, Theme } from "@mui/system";
+import type { SxProps, Theme } from "@mui/material";
 import mergeSx from "merge-sx";
 
 describe("Integration", () => {
