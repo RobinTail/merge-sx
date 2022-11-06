@@ -45,7 +45,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        mui-version: [5.10.0, latest]
+        mui-version: [ 5.1.0, 5.1, 5.2.0, 5.2, 5.3.0, 5.3, 5.4.0, 5.4, 5.5.0, 5.5, 5.6.0, 5.6, 5.7.0, 5.7, 5.8.0, 5.8, 5.9.0, 5.9, 5.10.0, 5.10, latest ]
     steps:
       - name: Get yarn cache dir
         id: yarnCache
