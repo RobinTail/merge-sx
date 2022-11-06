@@ -35,12 +35,12 @@ jobs:
           yarn lint
           yarn test
           yarn build
-      - name: Integration test
-        run: |
-          yarn install --cwd=integration-test
-          yarn intTest
       - name: Coveralls
         uses: coverallsapp/github-action@1.1.3
         continue-on-error: true
         with:
           github-token: ${{ secrets.github_token }}
+      - name: Integration test
+        run: |
+          yarn install --cwd=integration-test
+          yarn intTest
