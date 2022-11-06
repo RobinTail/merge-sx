@@ -1,4 +1,4 @@
-import type { SxProps } from "@mui/material";
+import type { SxProps } from "@mui/system";
 
 const ensureArray = (sx: SxProps<any>) => (Array.isArray(sx) ? sx : [sx]);
 
