@@ -26,7 +26,8 @@
   "scripts": {
     "build": "tsup",
     "lint": "eslint src",
-    "test": "tsc --noEmit && jest"
+    "test": "tsc --noEmit && jest",
+    "mdfix": "prettier *.md --write"
   },
   "peerDependencies": {
     "@mui/material": "^5.1.0"
