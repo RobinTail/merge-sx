@@ -53,5 +53,6 @@ jobs:
               "react-dom": "^17.0.2" \
             } \
           } " > integration-test/package.json
+          cat integration-test/package.json
           yarn install --cwd=integration-test
           yarn intTest
