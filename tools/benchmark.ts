@@ -18,7 +18,7 @@ Promise.all(
         .on("cycle", (event: Event) => {
           results[suite.name!] = {
             ...results[suite.name!],
-            [count]: (event.target as unknown as Target).hz!,
+            [count]: Math.round((event.target as unknown as Target).hz!),
           };
         })
         .on("complete", () => {

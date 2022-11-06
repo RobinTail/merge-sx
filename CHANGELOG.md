@@ -2,6 +2,18 @@
 
 ## Version 0
 
+### v0.1.3
+
+- The performance has been improved by `24%` for 10 arguments.
+
+```text
+┌─────────────┬────────┬───────┬──────┬───────┐
+│ N arguments │   10   │  100  │ 1000 │ 10000 │
+├─────────────┼────────┼───────┼──────┼───────┤
+│ ops/s       │ 601463 │ 48255 │ 2068 │  25   │
+└─────────────┴────────┴───────┴──────┴───────┘
+```
+
 ### v0.1.2
 
 - No changes to the code. Descriptive works only.
