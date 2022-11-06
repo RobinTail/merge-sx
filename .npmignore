@@ -1,5 +1,6 @@
 src
 tsconfig.json
+tsconfig.test.json
 .idea
 yarn-error.log
 .github
