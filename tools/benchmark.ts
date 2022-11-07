@@ -17,9 +17,10 @@ Promise.all(
             mergeSx(...styles);
           })
           .on("cycle", (event: Event) => {
-            results[suite.name!] = {
-              ...results[suite.name!],
-              [count]: Math.round((event.target as unknown as Target).hz!),
+            const target = event.target as unknown as Target;
+            results[target.name!] = {
+              ...results[target.name!],
+              [count]: Math.round(target.hz!),
             };
           })
           .on("complete", () => {

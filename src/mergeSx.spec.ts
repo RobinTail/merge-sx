@@ -45,6 +45,14 @@ describe("mergeSx()", () => {
         { ml: 1 },
       ]);
     });
+
+    it("handles null in array", () => {
+      expect(mergeSx({ mt: 1 }, [null, { ml: 1 }])).toEqual([
+        { mt: 1 },
+        null,
+        { ml: 1 },
+      ]);
+    });
   });
 
   describe("edge cases", () => {
@@ -54,6 +62,29 @@ describe("mergeSx()", () => {
 
     it("handles zero arguments", () => {
       expect(mergeSx()).toEqual([]);
+    });
+
+    it("handles single null", () => {
+      expect(mergeSx(null)).toEqual([]);
+    });
+
+    it("handles single false", () => {
+      expect(mergeSx(false)).toEqual([]);
+    });
+
+    it("handles single undefined", () => {
+      expect(mergeSx(undefined)).toEqual([]);
+    });
+
+    it("handles single empty array", () => {
+      expect(mergeSx([])).toEqual([]);
+    });
+
+    it("handles 65535 arguments", () => {
+      const styles = Array<SxProps>(65535).fill({ mt: 1 });
+      const result = mergeSx(...styles);
+      expect(Array.isArray(result)).toBeTruthy();
+      expect((result as any[]).length).toBe(65535);
     });
   });
 
