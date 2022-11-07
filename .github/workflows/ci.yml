@@ -41,7 +41,11 @@ jobs:
           github-token: ${{ secrets.github_token }}
       - name: Benchmark
         id: bench
-        run: echo "results=$(yarn tsnode tools/benchmark.ts)" >> $GITHUB_OUTPUT
+        run: |
+          echo "# Performance benchmark" >> bench.txt
+          echo '```' >> bench.txt
+          yarn tsnode tools/benchmark.ts >> bench.txt
+          echo '```' >> bench.txt
       - name: Find Comment
         uses: peter-evans/find-comment@v2
         id: fc
@@ -54,22 +58,14 @@ jobs:
         uses: peter-evans/create-or-update-comment@v2
         with:
           issue-number: ${{ github.event.pull_request.number }}
-          body: |
-            # Performance benchmark
-            ```
-            ${{ steps.bench.outputs.results }}
-            ```
+          body-file: bench.txt
           reactions: rocket
       - name: Update comment
         if: steps.fc.outputs.comment-id != ''
         uses: peter-evans/create-or-update-comment@v2
         with:
           comment-id: ${{ steps.fc.outputs.comment-id }}
-          body: |
-            # Performance benchmark
-            ```
-            ${{ steps.bench.outputs.results }}
-            ```
+          body-file: bench.txt
           reactions: hooray
 
   integrationTest:
