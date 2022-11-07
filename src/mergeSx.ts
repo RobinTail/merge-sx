@@ -1,5 +1,9 @@
-import { SystemStyleObject } from "@mui/system";
 import type { SxProps } from "@mui/system";
+
+type ReadonlyElement<T> = T extends ReadonlyArray<infer U> ? U : never;
+type MakeWritable<T> = Array<ReadonlyElement<T>>;
+const isReadonlyArray = <T>(subject: any): subject is ReadonlyArray<T> =>
+  Array.isArray(subject);
 
 /**
  * @desc Combines multiple SxProps
@@ -14,14 +18,10 @@ import type { SxProps } from "@mui/system";
 export const mergeSx = <T extends object>(
   ...styles: (SxProps<T> | false | undefined)[]
 ): SxProps<T> => {
-  const capacitor: Array<
-    Readonly<
-      boolean | SystemStyleObject<T> | ((theme: T) => SystemStyleObject<T>)
-    >
-  > = [];
+  const capacitor: MakeWritable<SxProps<T>> = [];
   for (const sx of styles) {
     if (sx) {
-      if (Array.isArray(sx)) {
+      if (isReadonlyArray<ReadonlyElement<typeof sx>>(sx)) {
         for (const sub of sx) {
           capacitor.push(sub);
         }
