@@ -79,6 +79,13 @@ describe("mergeSx()", () => {
     it("handles single empty array", () => {
       expect(mergeSx([])).toEqual([]);
     });
+
+    it("handles 65535 arguments", () => {
+      const styles = Array<SxProps>(65535).fill({ mt: 1 });
+      const result = mergeSx(...styles);
+      expect(Array.isArray(result)).toBeTruthy();
+      expect((result as any[]).length).toBe(65535);
+    });
   });
 
   describe("conditional type cases", () => {
