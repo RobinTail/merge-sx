@@ -1,6 +1,5 @@
+import { SystemStyleObject } from "@mui/system";
 import type { SxProps } from "@mui/system";
-
-const ensureArray = (sx: SxProps<any>) => (Array.isArray(sx) ? sx : [sx]);
 
 /**
  * @desc Combines multiple SxProps
@@ -14,8 +13,22 @@ const ensureArray = (sx: SxProps<any>) => (Array.isArray(sx) ? sx : [sx]);
  */
 export const mergeSx = <T extends object>(
   ...styles: (SxProps<T> | false | undefined)[]
-): SxProps<T> =>
-  styles.reduce<SxProps<T>>(
-    (agg, sx) => ensureArray(agg).concat(ensureArray(sx || [])),
-    []
-  );
+): SxProps<T> => {
+  const capacitor: Array<
+    Readonly<
+      boolean | SystemStyleObject<T> | ((theme: T) => SystemStyleObject<T>)
+    >
+  > = [];
+  for (const sx of styles) {
+    if (sx) {
+      if (Array.isArray(sx)) {
+        for (const sub of sx) {
+          capacitor.push(sub);
+        }
+      } else {
+        capacitor.push(sx);
+      }
+    }
+  }
+  return capacitor;
+};
