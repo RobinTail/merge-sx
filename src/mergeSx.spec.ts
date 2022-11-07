@@ -63,6 +63,22 @@ describe("mergeSx()", () => {
     it("handles zero arguments", () => {
       expect(mergeSx()).toEqual([]);
     });
+
+    it("handles single null", () => {
+      expect(mergeSx(null)).toEqual([]);
+    });
+
+    it("handles single false", () => {
+      expect(mergeSx(false)).toEqual([]);
+    });
+
+    it("handles single undefined", () => {
+      expect(mergeSx(undefined)).toEqual([]);
+    });
+
+    it("handles single empty array", () => {
+      expect(mergeSx([])).toEqual([]);
+    });
   });
 
   describe("conditional type cases", () => {
