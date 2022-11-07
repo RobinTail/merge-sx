@@ -45,6 +45,14 @@ describe("mergeSx()", () => {
         { ml: 1 },
       ]);
     });
+
+    it("handles null in array", () => {
+      expect(mergeSx({ mt: 1 }, [null, { ml: 1 }])).toEqual([
+        { mt: 1 },
+        null,
+        { ml: 1 },
+      ]);
+    });
   });
 
   describe("edge cases", () => {
