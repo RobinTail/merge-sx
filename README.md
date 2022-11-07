@@ -45,6 +45,18 @@ Luckily, starting version [5.1.0](https://github.com/mui/material-ui/releases/ta
 also be `array`. However, nested arrays are not allowed, so this utility does exactly the flat merge, also bringing
 support for conditional and optional inclusions, providing a very simple and semantically clean interface.
 
+## Performance
+
+The utility has been tested to support up to 65535 arguments.
+
+```text
+┌─────────────┬─────────┬────────┬───────┬───────┐
+│ N arguments │   10    │  100   │ 1000  │ 10000 │
+├─────────────┼─────────┼────────┼───────┼───────┤
+│ ops/s       │ 6475799 │ 718229 │ 74589 │ 7636  │
+└─────────────┴─────────┴────────┴───────┴───────┘
+```
+
 ## Examples
 
 ### Conditional merging
