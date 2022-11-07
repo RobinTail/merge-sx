@@ -1,6 +1,7 @@
 import { SxProps, Theme } from "@mui/system";
 import { Suite, Target } from "benchmark";
 import mergeSx from "../src";
+import { altMerge } from "../src/alt";
 
 const results: Record<string, Record<number, number>> = {};
 
@@ -16,10 +17,14 @@ Promise.all(
           .add("Current implementation", () => {
             mergeSx(...styles);
           })
+          .add("Alternative one", () => {
+            altMerge(...styles);
+          })
           .on("cycle", (event: Event) => {
-            results[suite.name!] = {
-              ...results[suite.name!],
-              [count]: Math.round((event.target as unknown as Target).hz!),
+            const target = event.target as unknown as Target;
+            results[target.name!] = {
+              ...results[target.name!],
+              [count]: Math.round(target.hz!),
             };
           })
           .on("complete", () => {
