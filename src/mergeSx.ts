@@ -1,9 +1,7 @@
 import type { SxProps } from "@mui/system";
 
-type ReadonlyElement<T> = T extends ReadonlyArray<infer U> ? U : never;
-type MakeWritable<T> = Array<ReadonlyElement<T>>;
-const isReadonlyArray = <T>(subject: any): subject is ReadonlyArray<T> =>
-  Array.isArray(subject);
+type PureSx<T extends object> = Exclude<SxProps<T>, ReadonlyArray<any>>;
+type SxAsArray<T extends object> = Array<PureSx<T>>;
 
 /**
  * @desc Combines multiple SxProps
@@ -18,15 +16,15 @@ const isReadonlyArray = <T>(subject: any): subject is ReadonlyArray<T> =>
 export const mergeSx = <T extends object>(
   ...styles: (SxProps<T> | false | undefined)[]
 ): SxProps<T> => {
-  const capacitor: MakeWritable<SxProps<T>> = [];
+  const capacitor: SxAsArray<T> = [];
   for (const sx of styles) {
     if (sx) {
-      if (isReadonlyArray<ReadonlyElement<typeof sx>>(sx)) {
-        for (const sub of sx) {
+      if (Array.isArray(sx)) {
+        for (const sub of sx as SxAsArray<T>) {
           capacitor.push(sub);
         }
       } else {
-        capacitor.push(sx);
+        capacitor.push(sx as PureSx<T>);
       }
     }
   }
