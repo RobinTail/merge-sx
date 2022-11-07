@@ -12,6 +12,7 @@ type SxAsArray<T extends object> = Array<PureSx<T>>;
  * @requires SxProps from MUI 5.1.0 or higher
  * @see https://github.com/mui/material-ui/releases/tag/v5.1.0
  * @link https://github.com/mui/material-ui/pull/29297
+ * @since v0.1.4 using for..of instead of reducer for performance reasons
  */
 export const mergeSx = <T extends object>(
   ...styles: (SxProps<T> | false | undefined)[]
