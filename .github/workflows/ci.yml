@@ -46,7 +46,11 @@ jobs:
           echo '```' >> bench.txt
           yarn tsnode tools/benchmark.ts >> bench.txt
           echo '```' >> bench.txt
+      - name: Show results
+        if: ${{ github.event_name == 'push' }}
+        run: cat bench.txt
       - name: Store results
+        if: ${{ github.event_name == 'pull_request' }}
         uses: actions/upload-artifact@v3
         with:
           name: bench
