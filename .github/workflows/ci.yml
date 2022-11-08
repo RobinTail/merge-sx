@@ -40,12 +40,28 @@ jobs:
         with:
           github-token: ${{ secrets.github_token }}
       - name: Benchmark
-        id: bench
         run: |
-          echo "# Performance benchmark" >> bench.txt
+          echo "# Performance benchmark\n\n${{ github.sha }}\n\n" >> bench.txt 
           echo '```' >> bench.txt
           yarn tsnode tools/benchmark.ts >> bench.txt
           echo '```' >> bench.txt
+      - name: Store results
+        uses: actions/upload-artifact@v3
+        with:
+          name: bench
+          path: bench.txt
+
+  comment:
+    needs: unitText
+    runs-on: ubuntu-latest
+    if: ${{ github.event_name == 'pull_request' }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Fetch benchmark results
+        uses: actions/download-artifact@v3
+        with:
+          name: bench
       - name: Find Comment
         uses: peter-evans/find-comment@v2
         id: fc
