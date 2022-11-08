@@ -8,6 +8,9 @@ on:
   pull_request:
     branches: [ master ]
 
+permissions:
+  pull-requests: write # for comments in PRs
+
 jobs:
   unitTest:
     runs-on: ubuntu-latest
