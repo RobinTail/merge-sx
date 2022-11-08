@@ -30,7 +30,7 @@ jobs:
           key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/yarn.lock') }}
       - name: Install dependencies
         run: yarn install
-      - name: Test
+      - name: Testing
         run: |
           yarn lint
           yarn test
