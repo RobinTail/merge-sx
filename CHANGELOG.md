@@ -2,6 +2,15 @@
 
 ## Version 0
 
+### v0.1.5
+
+- Fixing the installation warning introduced in v0.1.1.
+- The required peer dependency changed back from `@mui/system@^5.1.0` to `@mui/material@^5.1.0`.
+
+```text
+warning " > merge-sx@0.1.4" has unmet peer dependency "@mui/system@^5.1.0".
+```
+
 ### v0.1.4
 
 - Another performance improvement. This time by `878%` for 10 arguments.
