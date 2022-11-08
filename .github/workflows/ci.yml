@@ -39,16 +39,17 @@ jobs:
         continue-on-error: true
         with:
           github-token: ${{ secrets.github_token }}
-      - name: Benchmark
+      - name: Benchmark (show)
+        if: ${{ github.event_name == 'push' }}
+        run: yarn tsnode tools/benchmark.ts
+      - name: Benchmark (write)
+        if: ${{ github.event_name == 'pull_request' }}
         run: |
           echo "# Performance benchmark" >> bench.txt
-          echo ${{ github.sha }} >> bench.txt
+          echo ${{ github.event.pull_request.head.sha }} >> bench.txt
           echo '```' >> bench.txt
           yarn tsnode tools/benchmark.ts >> bench.txt
           echo '```' >> bench.txt
-      - name: Show results
-        if: ${{ github.event_name == 'push' }}
-        run: cat bench.txt
       - name: Store results
         if: ${{ github.event_name == 'pull_request' }}
         uses: actions/upload-artifact@v3
