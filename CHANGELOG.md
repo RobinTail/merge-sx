@@ -1,5 +1,13 @@
 # Changelog
 
+## Version 1
+
+### v1.0.0
+
+- First stable release according to [SemVer](https://semver.org/).
+- No breaking changes.
+- Tested on MUI versions from `5.1.0` to `5.10.13`.
+
 ## Version 0
 
 ### v0.1.5
