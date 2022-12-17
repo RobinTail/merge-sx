@@ -29,6 +29,7 @@
     "intTest": "tsc -p tsconfig.int.json && jest integration-test",
     "mdfix": "prettier *.md --write",
     "postversion": "git push && git push --tags",
+    "prepublishOnly": "yarn lint && yarn test && yarn build",
     "tsnode": "node -r @swc-node/register"
   },
   "peerDependencies": {
