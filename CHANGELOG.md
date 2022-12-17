@@ -2,6 +2,11 @@
 
 ## Version 1
 
+### v1.1.0
+
+- Just a technical update, no new features or fixes.
+- Tested on MUI versions from `5.1.0` to `5.11.0`. 
+
 ### v1.0.0
 
 - First stable release according to [SemVer](https://semver.org/).
