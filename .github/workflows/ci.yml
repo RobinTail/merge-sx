@@ -120,6 +120,8 @@ jobs:
         - ~5.9.0
         - 5.10.0
         - ~5.10.0
+        - 5.11.0
+        - ~5.11.0
         - latest
     steps:
       - name: Get yarn cache dir
