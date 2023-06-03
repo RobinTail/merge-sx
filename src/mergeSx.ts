@@ -31,3 +31,7 @@ export const mergeSx = <T extends object>(
   }
   return capacitor;
 };
+
+export const featured = <T extends object>(
+  ...styles: (SxProps<T> | false | undefined)[]
+) => styles.flat(2).filter((entry) => Boolean(entry)) as SxProps<T>;

@@ -1,6 +1,7 @@
 import { SxProps, Theme } from "@mui/system";
 import { Suite, Target } from "benchmark";
 import mergeSx from "../src";
+import { featured } from "../src/mergeSx";
 
 const results: Record<string, Record<number, number>> = {};
 
@@ -15,6 +16,9 @@ Promise.all(
         suite
           .add("Current implementation", () => {
             mergeSx(...styles);
+          })
+          .add("Featured implementation", () => {
+            featured(...styles);
           })
           .on("cycle", (event: Event) => {
             const target = event.target as unknown as Target;
