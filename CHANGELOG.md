@@ -2,15 +2,23 @@
 
 ## Version 1
 
+### v1.3.0
+
+-
+- Both CJS and ESM bundles have their own declaration files:
+  - `/dist/index.d.ts` for CJS,
+  - `/dist/index.d.mts` for ESM.
+  - The `exports` entry of `package.json` is adjusted accordingly.
+
 ### v1.2.0
 
 - Just a technical update, no new features or fixes.
-- Tested on MUI versions from `5.1.0` to `5.12.0`. 
+- Tested on MUI versions from `5.1.0` to `5.12.0`.
 
 ### v1.1.0
 
 - Just a technical update, no new features or fixes.
-- Tested on MUI versions from `5.1.0` to `5.11.0`. 
+- Tested on MUI versions from `5.1.0` to `5.11.0`.
 
 ### v1.0.0
 
