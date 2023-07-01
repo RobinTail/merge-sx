@@ -2,9 +2,16 @@
 
 ## Version 1
 
+### v1.3.1
+
+- Fixed issue #205 reported by [@mwskwong](https://github.com/mwskwong).
+  - The issue was introduced in v1.3.0. 
+  - Next.js and Webpack used to complain on importing the module with the following error message:
+
+> Module not found: Error: Default condition should be last one
+
 ### v1.3.0
 
--
 - Both CJS and ESM bundles have their own declaration files:
   - `/dist/index.d.ts` for CJS,
   - `/dist/index.d.mts` for ESM.
