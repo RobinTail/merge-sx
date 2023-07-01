@@ -1,6 +1,6 @@
 {
   "name": "merge-sx",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "description": "Combines multiple SxProps for Material UI components.",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
