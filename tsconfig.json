@@ -4,6 +4,7 @@
     "target": "ES5",
     "module": "ESNext",
     "moduleResolution": "Node",
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "allowImportingTsExtensions": true
   }
 }

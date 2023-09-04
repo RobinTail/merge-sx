@@ -1,6 +1,7 @@
 import { SxProps, Theme } from "@mui/system";
 import { Suite, Target } from "benchmark";
-import mergeSx from "../src";
+// eslint-disable-next-line import/extensions
+import mergeSx from "../src/index.ts";
 
 const results: Record<string, Record<number, number>> = {};
 
@@ -27,8 +28,8 @@ Promise.all(
             resolve(suite.filter("fastest").map("name"));
           })
           .run({ async: true });
-      })
-  )
+      }),
+  ),
 ).then(() => {
   console.table(results);
 });
