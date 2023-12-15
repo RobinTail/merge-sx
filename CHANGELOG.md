@@ -5,6 +5,7 @@
 - Breaking changes:
   - Targeting ES6,
   - Default export removed.
+  - IIFE build removed.
 - The distribution becomes ESM first, while remaining dual (CJS support remains).
   - The right files should be chosen automatically from the `dist` folder:
     - for ESM: `index.js` and `index.d.ts`,
