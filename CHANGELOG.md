@@ -4,7 +4,7 @@
 
 - Breaking changes:
   - Targeting ES6,
-  - Default export removed.
+  - Default export removed,
   - IIFE build removed.
 - The distribution becomes ESM first, while remaining dual (CJS support remains).
   - The right files should be chosen automatically from the `dist` folder:
@@ -12,6 +12,15 @@
     - for CJS: `index.cjs` and `index.d.cts`.
 - Features:
   - Performance improvement: 1.6 times faster.
+- How to migrate:
+  - Replace default import with a named one.
+
+```typescript
+// before:
+import mergeSx from "merge-sx";
+// after:
+import { mergeSx } from "merge-sx";
+```
 
 ## Version 1
 
