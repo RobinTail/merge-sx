@@ -27,7 +27,8 @@
     {
       "files": [
         "./tools/*.ts",
-        "./integration-test/*.ts"
+        "./integration-test/*.ts",
+        "./tsup.config.ts"
       ],
       "rules": {
         "import/no-extraneous-dependencies": "off"

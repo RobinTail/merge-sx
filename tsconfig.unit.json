@@ -1,6 +1,6 @@
 {
   "extends": "./tsconfig.json",
-  "exclude": ["integration-test"],
+  "include": ["src"],
   "compilerOptions": {
     "noEmit": true
   }
