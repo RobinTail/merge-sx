@@ -20,6 +20,7 @@
       }
     }
   },
+  "files": ["dist", "*.md"],
   "sideEffects": false,
   "repository": {
     "type": "git",
