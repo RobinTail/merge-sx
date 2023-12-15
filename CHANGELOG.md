@@ -2,10 +2,15 @@
 
 ## Version 1
 
+### v1.4.0
+
+- Upgraded dependencies.
+- Tested on MUI versions up to 5.15.0.
+
 ### v1.3.1
 
 - Fixed issue #205 reported by [@mwskwong](https://github.com/mwskwong).
-  - The issue was introduced in v1.3.0. 
+  - The issue was introduced in v1.3.0.
   - Next.js and Webpack used to complain on importing the module with the following error message:
 
 > Module not found: Error: Default condition should be last one
