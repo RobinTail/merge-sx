@@ -146,7 +146,7 @@ jobs:
               "version": "1.0.0",
               "license": "MIT",
               "dependencies": {
-                "merge-sx": "./..",
+                "merge-sx": "link:./..",
                 "@mui/material": "${MUI_VERSION}",
                 "react": "^17.0.2",
                 "react-dom": "^17.0.2"
