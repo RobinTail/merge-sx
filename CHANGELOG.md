@@ -1,5 +1,13 @@
 # Changelog
 
+## Version 2
+
+- Breaking changes:
+  - Targeting ES6,
+  - Default export removed.
+- Features:
+  - Performance improvement: 1.6 times faster.
+
 ## Version 1
 
 ### v1.4.0
