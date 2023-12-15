@@ -26,7 +26,8 @@
   "overrides": [
     {
       "files": [
-        "./tools/*.ts"
+        "./tools/*.ts",
+        "./integration-test/*.ts"
       ],
       "rules": {
         "import/no-extraneous-dependencies": "off"
