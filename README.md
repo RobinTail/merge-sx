@@ -16,6 +16,8 @@ yarn add merge-sx
 The utility provides a very simple and semantically clean interface, that supports conditional and optional inclusions.
 
 ```ts
+import { mergeSx } from "merge-sx";
+
 // Merge your SxProps
 mergeSx(sx1, sx2 /*, ... */);
 // Merge optionally
