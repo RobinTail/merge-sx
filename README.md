@@ -16,6 +16,8 @@ yarn add merge-sx
 The utility provides a very simple and semantically clean interface, that supports conditional and optional inclusions.
 
 ```ts
+import { mergeSx } from "merge-sx";
+
 // Merge your SxProps
 mergeSx(sx1, sx2 /*, ... */);
 // Merge optionally
@@ -50,11 +52,11 @@ support for conditional and optional inclusions, providing a very simple and sem
 The utility has been tested to support up to 65535 arguments.
 
 ```text
-┌─────────────┬─────────┬────────┬───────┬───────┐
-│ N arguments │   10    │  100   │ 1000  │ 10000 │
-├─────────────┼─────────┼────────┼───────┼───────┤
-│ ops/s       │ 8476396 │ 975246 │ 94453 │ 10414 │
-└─────────────┴─────────┴────────┴───────┴───────┘
+┌─────────────┬──────────┬─────────┬────────┬───────┐
+│ N arguments │   10     │   100   │  1000  │ 10000 │
+├─────────────┼──────────┼─────────┼────────┼───────┤
+│ ops/s       │ 13615624 │ 1273083 │ 122746 │ 14686 │
+└─────────────┴──────────┴─────────┴────────┴───────┘
 ```
 
 ## Examples

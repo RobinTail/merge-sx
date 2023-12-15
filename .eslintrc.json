@@ -11,9 +11,9 @@
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
-    "ecmaVersion": 6,
+    "ecmaVersion": "latest",
     "sourceType": "module",
-    "project": "./tsconfig.json"
+    "project": true
   },
   "plugins": [
     "@typescript-eslint",
@@ -26,7 +26,9 @@
   "overrides": [
     {
       "files": [
-        "./tools/*.ts"
+        "./tools/*.ts",
+        "./integration-test/*.ts",
+        "./tsup.config.ts"
       ],
       "rules": {
         "import/no-extraneous-dependencies": "off"
