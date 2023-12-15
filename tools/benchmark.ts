@@ -1,7 +1,7 @@
 import { SxProps, Theme } from "@mui/system";
 import { Suite, Target } from "benchmark";
 // eslint-disable-next-line import/extensions
-import mergeSx from "../src/index.ts";
+import { mergeSx } from "../src/index.ts";
 
 const results: Record<string, Record<number, number>> = {};
 

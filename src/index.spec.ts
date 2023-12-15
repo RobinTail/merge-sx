@@ -1,5 +1,5 @@
 import type { SxProps, Theme } from "@mui/system";
-import { mergeSx } from "./mergeSx";
+import { mergeSx } from "./index.ts";
 
 describe("mergeSx()", () => {
   describe("simple cases", () => {
