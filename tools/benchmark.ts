@@ -1,5 +1,5 @@
 import { SxProps, Theme } from "@mui/system";
-import { Suite, Target } from "benchmark";
+import bench from "benchmark";
 import { mergeSx } from "../src";
 
 const results: Record<string, Record<number, number>> = {};
@@ -8,7 +8,7 @@ Promise.all(
   [10, 100, 1000, 10000].map(
     (count) =>
       new Promise((resolve) => {
-        const suite = new Suite(`Performance`);
+        const suite = new bench.Suite(`Performance`);
 
         const styles = new Array<SxProps<Theme>>(count).fill({ mt: 1 });
 
@@ -16,8 +16,7 @@ Promise.all(
           .add("Current implementation", () => {
             mergeSx(...styles);
           })
-          .on("cycle", (event: Event) => {
-            const target = event.target as unknown as Target;
+          .on("cycle", ({ target }: bench.Event) => {
             results[target.name!] = {
               ...results[target.name!],
               [count]: Math.round(target.hz!),
