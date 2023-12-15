@@ -9,6 +9,6 @@ yarn-error.log
 coverage
 .prettierignore
 tsup.config.json
-jest.config.json
+vitest.config.mts
 integration-test
 tools
