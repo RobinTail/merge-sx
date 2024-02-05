@@ -9,5 +9,9 @@ export default defineConfig({
       reporter: ["json-summary", "text", "html", "lcov"],
       include: ["src/**"],
     },
+    benchmark: {
+      reporters: ["default", "json"],
+      outputFile: "bench.json",
+    },
   },
 });

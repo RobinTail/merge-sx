@@ -42,16 +42,15 @@ jobs:
         continue-on-error: true
         with:
           github-token: ${{ secrets.github_token }}
-      - name: Benchmark (show)
-        if: ${{ github.event_name == 'push' }}
-        run: yarn tsx tools/benchmark.ts
-      - name: Benchmark (write)
+      - name: Benchmark
+        run: yarn vitest bench --run
+      - name: Benchmark processing
         if: ${{ github.event_name == 'pull_request' }}
         run: |
           echo "# Performance benchmark" >> bench.txt
           echo ${{ github.event.pull_request.head.sha }} >> bench.txt
           echo '```' >> bench.txt
-          yarn tsx tools/benchmark.ts >> bench.txt
+          yarn tsx tools/benchmark.processor.ts >> bench.txt
           echo '```' >> bench.txt
       - name: Store results
         if: ${{ github.event_name == 'pull_request' }}
