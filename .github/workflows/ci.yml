@@ -38,7 +38,7 @@ jobs:
           yarn lint
           yarn test
       - name: Coveralls
-        uses: coverallsapp/github-action@v1
+        uses: coverallsapp/github-action@v2
         continue-on-error: true
         with:
           github-token: ${{ secrets.github_token }}
