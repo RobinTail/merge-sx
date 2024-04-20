@@ -1,4 +1,8 @@
-# merge-sx [![Coverage Status](https://coveralls.io/repos/github/RobinTail/merge-sx/badge.svg?branch=master)](https://coveralls.io/github/RobinTail/merge-sx?branch=master)
+# merge-sx
+
+[![Coverage Status](https://coveralls.io/repos/github/RobinTail/merge-sx/badge.svg?branch=master)](https://coveralls.io/github/RobinTail/merge-sx?branch=master)
+![NPM Downloads](https://img.shields.io/npm/dw/merge-sx)
+![NPM License](https://img.shields.io/npm/l/merge-sx)
 
 Combines multiple [`SxProps`](https://mui.com/system/getting-started/the-sx-prop)
 for [Material UI](https://mui.com/) components.
