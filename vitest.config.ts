@@ -10,8 +10,7 @@ export default defineConfig({
       include: ["src/**"],
     },
     benchmark: {
-      reporters: ["default", "json"],
-      outputFile: "bench.json",
+      outputJson: "bench.json",
     },
   },
 });
