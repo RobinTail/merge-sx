@@ -2,6 +2,12 @@
 
 ## Version 2
 
+### v2.0.1
+
+- Optimization for consumption in browser.
+
+### v2.0.0
+
 - Breaking changes:
   - Targeting ES6,
   - Default export removed,
