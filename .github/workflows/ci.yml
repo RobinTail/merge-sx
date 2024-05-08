@@ -128,7 +128,7 @@ jobs:
       - name: Install dependencies
         run: bun install
       - name: Build
-        run: yarn build
+        run: bun run build
       - name: Test
         env:
           MUI_VERSION: ${{ matrix.mui-version }}
@@ -147,5 +147,5 @@ jobs:
             }
           EOF
           cat integration-test/package.json
-          yarn install --cwd=integration-test
-          yarn intTest
+          bun --cwd=integration-test install
+          bun run intTest
