@@ -28,8 +28,7 @@
       "files": [
         "./tools/*.ts",
         "./integration-test/*.ts",
-        "./tsup.config.ts",
-        "./vitest.config.ts"
+        "./build.ts"
       ],
       "rules": {
         "import/no-extraneous-dependencies": "off"
