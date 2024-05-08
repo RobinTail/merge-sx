@@ -1,6 +1,6 @@
 import type { SxProps, Theme } from "@mui/system";
 import { mergeSx } from "merge-sx";
-import { describe, test, expect } from "vitest";
+import { describe, test, expect } from "bun:test";
 
 describe("Integration", () => {
   test("mergeSx() operates SxProps", () => {

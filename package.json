@@ -34,7 +34,7 @@
   },
   "license": "MIT",
   "scripts": {
-    "build": "bun run build.ts && attw --pack",
+    "build": "bun run build.ts && bun tsc -p tsconfig.dts.json && cp dist/index.d.ts dist/index.d.cts && attw --pack",
     "lint": "eslint src integration-test",
     "test": "tsc -p tsconfig.unit.json && bun test src --coverage",
     "intTest": "tsc -p integration-test/tsconfig.json && bun test integration-test",
