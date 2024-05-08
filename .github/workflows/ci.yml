@@ -15,42 +15,41 @@ jobs:
   unitTest:
     runs-on: ubuntu-latest
     steps:
-      - name: Get yarn cache dir
-        id: yarnCache
-        run: echo "dir=$(yarn cache dir)" >> $GITHUB_OUTPUT
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Install Node.js
-        uses: actions/setup-node@v4
+      - uses: oven-sh/setup-bun@v1
         with:
-          node-version: 18.x
+          bun-version: latest
+      - name: Get bun cache dir
+        id: bunCache
+        run: echo "dir=$(bun pm cache)" >> $GITHUB_OUTPUT
       - name: Cache node modules
         uses: actions/cache@v4
         env:
-          cache-name: cache-yarn
+          cache-name: cache-bun
         with:
-          path: ${{ steps.yarnCache.outputs.dir }}
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/yarn.lock') }}
+          path: ${{ steps.bunCache.outputs.dir }}
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/bun.lockb') }}
       - name: Install dependencies
-        run: yarn install
+        run: bun install
       - name: Testing
         run: |
-          yarn lint
-          yarn test
+          bun run lint
+          bun run test
       - name: Coveralls
         uses: coverallsapp/github-action@v2
         continue-on-error: true
         with:
           github-token: ${{ secrets.github_token }}
       - name: Benchmark
-        run: yarn vitest bench --run
+        run: bunx --bun vitest bench --run --outputJson bench.json
       - name: Benchmark processing
         if: ${{ github.event_name == 'pull_request' }}
         run: |
           echo "# Performance benchmark" >> bench.txt
           echo ${{ github.event.pull_request.head.sha }} >> bench.txt
           echo '```' >> bench.txt
-          yarn tsx tools/benchmark.processor.ts >> bench.txt
+          yarn bun run tools/benchmark.processor.ts >> bench.txt
           echo '```' >> bench.txt
       - name: Store results
         if: ${{ github.event_name == 'pull_request' }}
