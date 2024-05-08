@@ -36,7 +36,7 @@
   "scripts": {
     "build": "tsup && attw --pack",
     "lint": "eslint src integration-test",
-    "test": "tsc -p tsconfig.unit.json && vitest run src --coverage",
+    "test": "tsc -p tsconfig.unit.json && bun test src --coverage",
     "intTest": "tsc -p integration-test/tsconfig.json && vitest run -r integration-test",
     "mdfix": "prettier *.md --write",
     "postversion": "git push && git push --tags",
