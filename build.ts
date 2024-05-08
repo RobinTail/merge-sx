@@ -1,4 +1,4 @@
-Bun.build({
+await Bun.build({
   entrypoints: ["src/index.ts"],
   outdir: "dist",
   /** @link https://github.com/oven-sh/bun/issues/159 */

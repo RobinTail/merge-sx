@@ -49,6 +49,7 @@
   "devDependencies": {
     "@arethetypeswrong/cli": "^0.15.0",
     "@mui/system": "^5.15.0",
+    "@tsconfig/bun": "^1.0.5",
     "@tsconfig/node18": "^18.2.2",
     "@types/bun": "latest",
     "@typescript-eslint/eslint-plugin": "^7.0.2",
