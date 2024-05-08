@@ -34,10 +34,10 @@
   },
   "license": "MIT",
   "scripts": {
-    "build": "tsup && attw --pack",
+    "build": "bun run build.ts && attw --pack",
     "lint": "eslint src integration-test",
     "test": "tsc -p tsconfig.unit.json && bun test src --coverage",
-    "intTest": "tsc -p integration-test/tsconfig.json && vitest run -r integration-test",
+    "intTest": "tsc -p integration-test/tsconfig.json && bun test integration-test",
     "mdfix": "prettier *.md --write",
     "postversion": "git push && git push --tags",
     "prepublishOnly": "yarn lint && yarn test && yarn build"
