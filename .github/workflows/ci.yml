@@ -49,7 +49,7 @@ jobs:
           echo "# Performance benchmark" >> bench.txt
           echo ${{ github.event.pull_request.head.sha }} >> bench.txt
           echo '```' >> bench.txt
-          yarn bun run tools/benchmark.processor.ts >> bench.txt
+          bun run tools/benchmark.processor.ts >> bench.txt
           echo '```' >> bench.txt
       - name: Store results
         if: ${{ github.event_name == 'pull_request' }}
