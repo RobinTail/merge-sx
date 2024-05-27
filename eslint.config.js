@@ -8,7 +8,12 @@ import importPlugin from "eslint-plugin-import-x";
 
 export default [
   {
-    languageOptions: { globals: globals.browser },
+    languageOptions: {
+      globals: {
+        ...globals.browser,
+        ...globals.node,
+      },
+    },
     plugins: {
       unicorn: unicornPlugin,
       "import-x": importPlugin,
