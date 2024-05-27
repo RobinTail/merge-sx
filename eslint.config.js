@@ -20,4 +20,13 @@ export default [
   prettierRules,
   // Things to turn off globally
   { ignores: ["dist/", "coverage/"] },
+  // Things to turn on globally
+  {
+    rules: {
+      "unicorn/prefer-node-protocol": "error",
+      "import-x/named": "error",
+      "import-x/export": "error",
+      "import-x/no-duplicates": "warn",
+    },
+  },
 ];
