@@ -2,6 +2,10 @@
 
 ## Version 2
 
+### v2.0.2
+
+- Replaced `any` with `unknown` for internally used type.
+
 ### v2.0.1
 
 - Optimization for consumption in browser.
