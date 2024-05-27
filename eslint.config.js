@@ -1,10 +1,23 @@
 import globals from "globals";
-import pluginJs from "@eslint/js";
-import tseslint from "typescript-eslint";
-
+import jsPlugin from "@eslint/js";
+import tsPlugin from "typescript-eslint";
+import prettierOverrides from "eslint-config-prettier";
+import prettierRules from "eslint-plugin-prettier/recommended";
+import unicornPlugin from "eslint-plugin-unicorn";
+import importPlugin from "eslint-plugin-import-x";
 
 export default [
-  {languageOptions: { globals: globals.browser }},
-  pluginJs.configs.recommended,
-  ...tseslint.configs.recommended,
+  {
+    languageOptions: { globals: globals.browser },
+    plugins: {
+      unicorn: unicornPlugin,
+      "import-x": importPlugin,
+    },
+  },
+  jsPlugin.configs.recommended,
+  ...tsPlugin.configs.recommended,
+  prettierOverrides,
+  prettierRules,
+  // Things to turn off globally
+  { ignores: ["dist/", "coverage/"] },
 ];
