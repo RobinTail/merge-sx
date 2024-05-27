@@ -35,7 +35,7 @@
   "license": "MIT",
   "scripts": {
     "build": "tsup && attw --pack",
-    "lint": "eslint src integration-test",
+    "lint": "eslint",
     "test": "tsc -p tsconfig.unit.json && vitest run src --coverage",
     "intTest": "tsc -p integration-test/tsconfig.json && vitest run -r integration-test",
     "mdfix": "prettier *.md --write",
