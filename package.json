@@ -52,7 +52,7 @@
     "@tsconfig/node18": "^18.2.2",
     "@types/node": "^20.10.4",
     "@vitest/coverage-istanbul": "^1.6.0",
-    "eslint": "9.x",
+    "eslint": "^9.3.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-import-x": "^0.5.1",
     "eslint-plugin-prettier": "^5.1.3",
