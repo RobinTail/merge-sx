@@ -67,7 +67,7 @@
     "vitest": "^1.6.0"
   },
   "resolutions": {
-    "**/@typescript-eslint/utils": "^8.0.0-alpha.16"
+    "**/@typescript-eslint/utils": "^8.0.0-alpha.25"
   },
   "keywords": [
     "react",
