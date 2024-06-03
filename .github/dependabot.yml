@@ -15,4 +15,4 @@ updates:
       typescript-eslint:
         patterns:
           - "typescript-eslint"
-          - "@typescript-eslint/utils"
+          - "@typescript-eslint/*"
