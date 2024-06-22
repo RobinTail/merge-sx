@@ -1,6 +1,6 @@
 import type { SxProps } from "@mui/system";
 
-type PureSx<T extends object> = Exclude<SxProps<T>, ReadonlyArray<any>>;
+type PureSx<T extends object> = Exclude<SxProps<T>, ReadonlyArray<unknown>>;
 type SxAsArray<T extends object> = Array<PureSx<T>>;
 
 /**

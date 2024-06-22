@@ -1,6 +1,6 @@
 {
   "name": "merge-sx",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Combines multiple SxProps for Material UI components.",
   "main": "dist/index.cjs",
   "module": "dist/index.js",
@@ -36,7 +36,7 @@
   "scripts": {
     "build:cjs:dts": "bun tsc -p cjs.dts.json && mv dist/index.js dist/index.cjs && cp dist/index.d.ts dist/index.d.cts",
     "build": "bun run build:cjs:dts && bun run build.ts && attw --pack",
-    "lint": "eslint src integration-test",
+    "lint": "eslint",
     "test": "tsc -p tsconfig.unit.json && bun test src --coverage",
     "intTest": "tsc -p integration-test/tsconfig.json && bun test integration-test",
     "mdfix": "prettier *.md --write",
@@ -49,21 +49,27 @@
   "devDependencies": {
     "@arethetypeswrong/cli": "^0.15.0",
     "@emotion/styled": "^11.11.5",
+    "@eslint/js": "^9.3.0",
     "@mui/system": "^5.15.0",
     "@tsconfig/bun": "^1.0.5",
     "@tsconfig/node18": "^18.2.2",
     "@types/bun": "latest",
-    "@typescript-eslint/eslint-plugin": "^7.0.2",
-    "@typescript-eslint/parser": "^7.0.2",
-    "eslint": "^8.56.0",
-    "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-config-airbnb-typescript": "^18.0.0",
+    "@types/node": "^20.10.4",
+    "eslint": "^9.3.0",
     "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-import": "^2.29.1",
-    "eslint-plugin-prettier": "^5.0.1",
-    "prettier": "3.2.5",
+    "eslint-plugin-import-x": "^0.5.1",
+    "eslint-plugin-prettier": "^5.1.3",
+    "eslint-plugin-unicorn": "^54.0.0",
+    "globals": "^15.3.0",
+    "prettier": "3.3.2",
     "react": "^18.3.1",
-    "typescript": "^5.3.3"
+    "tsup": "^8.0.1",
+    "tsx": "^4.6.2",
+    "typescript": "^5.3.3",
+    "typescript-eslint": "^8.0.0-alpha.30"
+  },
+  "resolutions": {
+    "**/@typescript-eslint/utils": "^8.0.0-alpha.30"
   },
   "keywords": [
     "react",
