@@ -1,10 +1,4 @@
 {
-  "extends": "@tsconfig/node18/tsconfig.json",
-  "compilerOptions": {
-    "strict": true,
-    "target": "ES6",
-    "module": "ES2022",
-    "moduleResolution": "Bundler",
-    "skipLibCheck": true
-  }
+  "extends": "@tsconfig/bun/tsconfig.json",
+  "compilerOptions": {}
 }
