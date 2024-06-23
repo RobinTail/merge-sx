@@ -6,6 +6,5 @@ await Bun.build({
   splitting: false,
   sourcemap: "none",
   minify: true,
-  // dts: true,
   target: "browser",
 });
