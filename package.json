@@ -47,12 +47,11 @@
   },
   "devDependencies": {
     "@arethetypeswrong/cli": "^0.15.0",
-    "@eslint/js": "^9.3.0",
     "@mui/system": "^5.15.0",
     "@tsconfig/node18": "^18.2.2",
     "@types/node": "^20.10.4",
     "@vitest/coverage-istanbul": "^1.6.0",
-    "eslint": "^9.3.0",
+    "eslint": "^9.6.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-import-resolver-typescript": "^3.6.1",
     "eslint-plugin-import": "https://registry.npmjs.org/eslint-plugin-import-x/-/eslint-plugin-import-x-0.5.2.tgz",
@@ -64,11 +63,11 @@
     "tsup": "^8.0.1",
     "tsx": "^4.6.2",
     "typescript": "^5.3.3",
-    "typescript-eslint": "^8.0.0-alpha.34",
+    "typescript-eslint": "^8.0.0-alpha.38",
     "vitest": "^1.6.0"
   },
   "resolutions": {
-    "**/@typescript-eslint/utils": "^8.0.0-alpha.34"
+    "**/@typescript-eslint/utils": "^8.0.0-alpha.38"
   },
   "keywords": [
     "react",
