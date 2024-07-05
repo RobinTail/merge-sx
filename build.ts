@@ -1,3 +1,5 @@
+import isolatedDecl from "bun-plugin-isolated-decl";
+
 await Bun.build({
   entrypoints: ["src/index.ts"],
   outdir: "dist",
@@ -6,5 +8,6 @@ await Bun.build({
   splitting: false,
   sourcemap: "none",
   minify: true,
+  plugins: [isolatedDecl()],
   target: "browser",
 });
