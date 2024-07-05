@@ -4,7 +4,8 @@
     "outDir": "dist",
     "module": "commonjs",
     "moduleResolution": "node",
-    "target": "ES6"
+    "target": "ES6",
+    "removeComments": true
   },
   "include": ["src/index.ts"]
 }
