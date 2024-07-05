@@ -7,19 +7,12 @@ import importPlugin from "eslint-plugin-import";
 
 export default [
   {
-    languageOptions: {
-      globals: {
-        ...globals.browser,
-        ...globals.node,
-      },
-    },
-    plugins: {
-      import: importPlugin,
-    },
+    languageOptions: { globals: globals.browser },
+    plugins: { import: importPlugin },
     settings: {
       // "import-x" plugin installed as "import", in order to suppress the warning from the typescript resolver
       // @link https://github.com/import-js/eslint-import-resolver-typescript/issues/293
-      "import-x/resolver": { typescript: true, node: true },
+      "import-x/resolver": { typescript: true },
     },
   },
   jsPlugin.configs.recommended,
