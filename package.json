@@ -53,7 +53,6 @@
     "@tsconfig/bun": "^1.0.5",
     "@tsconfig/node18": "^18.2.2",
     "@types/bun": "latest",
-    "@types/node": "^20.10.4",
     "bun-plugin-isolated-decl": "^0.1.1",
     "eslint": "^9.6.0",
     "eslint-config-prettier": "^9.1.0",
