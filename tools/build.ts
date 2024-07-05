@@ -10,4 +10,5 @@ await Bun.build({
   minify: true,
   plugins: [isolatedDecl()],
   target: "browser",
+  external: ["*"],
 });
