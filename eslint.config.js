@@ -3,7 +3,6 @@ import jsPlugin from "@eslint/js";
 import tsPlugin from "typescript-eslint";
 import prettierOverrides from "eslint-config-prettier";
 import prettierRules from "eslint-plugin-prettier/recommended";
-import unicornPlugin from "eslint-plugin-unicorn";
 import importPlugin from "eslint-plugin-import";
 
 export default [
@@ -15,7 +14,6 @@ export default [
       },
     },
     plugins: {
-      unicorn: unicornPlugin,
       import: importPlugin,
     },
     settings: {
@@ -33,7 +31,6 @@ export default [
   // Things to turn on globally
   {
     rules: {
-      "unicorn/prefer-node-protocol": "error",
       "import/named": "error",
       "import/export": "error",
       "import/no-duplicates": "warn",
