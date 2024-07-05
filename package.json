@@ -34,7 +34,7 @@
   },
   "license": "MIT",
   "scripts": {
-    "build:cjs": "bun tsc -p cjs.json && mv dist/index.js dist/index.cjs",
+    "build:cjs": "bun tsc -p tsconfig.cjs.json && mv dist/index.js dist/index.cjs",
     "build": "bun run build:cjs && bun run tools/build.ts && cp dist/index.d.ts dist/index.d.cts && attw --pack",
     "lint": "eslint",
     "test": "tsc -p tsconfig.unit.json && bun test src",
