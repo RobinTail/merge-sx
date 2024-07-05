@@ -1,6 +1,4 @@
-import { readFileSync } from "node:fs";
-
-const text = readFileSync("bench.json", "utf-8");
+const text = await Bun.file("bench.json", { type: "application/json" }).json();
 const json = JSON.parse(text);
 const data = json.files[0].groups[0];
 const suite = data.fullName.split(">")[1].trim();
