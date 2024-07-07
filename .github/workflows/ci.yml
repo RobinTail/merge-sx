@@ -43,7 +43,7 @@ jobs:
         with:
           github-token: ${{ secrets.github_token }}
       - name: Benchmark
-        run: bunx vitest bench --run --outputJson bench.json
+        run: bunx --bun vitest@^2.0.0-beta.13 bench --run --outputJson bench.json
       - name: Benchmark processing
         if: ${{ github.event_name == 'pull_request' }}
         run: |
