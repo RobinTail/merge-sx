@@ -24,7 +24,12 @@ jobs:
         with:
           node-version: 18
           registry-url: https://registry.npmjs.org/
-      - run: yarn install
+      - name: Install bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+      - name: Install dependencies
+        run: bun install
       - run: npm publish --tag ${{ inputs.tag }}
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_KEY}}

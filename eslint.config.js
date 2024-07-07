@@ -3,25 +3,16 @@ import jsPlugin from "@eslint/js";
 import tsPlugin from "typescript-eslint";
 import prettierOverrides from "eslint-config-prettier";
 import prettierRules from "eslint-plugin-prettier/recommended";
-import unicornPlugin from "eslint-plugin-unicorn";
 import importPlugin from "eslint-plugin-import";
 
 export default [
   {
-    languageOptions: {
-      globals: {
-        ...globals.browser,
-        ...globals.node,
-      },
-    },
-    plugins: {
-      unicorn: unicornPlugin,
-      import: importPlugin,
-    },
+    languageOptions: { globals: globals.browser },
+    plugins: { import: importPlugin },
     settings: {
       // "import-x" plugin installed as "import", in order to suppress the warning from the typescript resolver
       // @link https://github.com/import-js/eslint-import-resolver-typescript/issues/293
-      "import-x/resolver": { typescript: true, node: true },
+      "import-x/resolver": { typescript: true },
     },
   },
   jsPlugin.configs.recommended,
@@ -33,7 +24,6 @@ export default [
   // Things to turn on globally
   {
     rules: {
-      "unicorn/prefer-node-protocol": "error",
       "import/named": "error",
       "import/export": "error",
       "import/no-duplicates": "warn",

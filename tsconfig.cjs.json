@@ -1,0 +1,11 @@
+{
+  "extends": "@tsconfig/node18/tsconfig.json",
+  "compilerOptions": {
+    "outDir": "dist",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "target": "ES6",
+    "removeComments": true
+  },
+  "include": ["src/index.ts"]
+}

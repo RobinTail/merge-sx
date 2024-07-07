@@ -1,6 +1,6 @@
 {
   "name": "merge-sx",
-  "version": "2.0.3",
+  "version": "3.0.0-beta.2",
   "description": "Combines multiple SxProps for Material UI components.",
   "main": "dist/index.cjs",
   "module": "dist/index.js",
@@ -34,37 +34,38 @@
   },
   "license": "MIT",
   "scripts": {
-    "build": "tsup && attw --pack",
+    "build:cjs": "tsc -p tsconfig.cjs.json && uglifyjs dist/index.js -c -m -o dist/index.cjs",
+    "build": "bun run build:cjs && bun run tools/build.ts && cp dist/index.d.ts dist/index.d.cts && attw --pack",
     "lint": "eslint",
-    "test": "tsc -p tsconfig.unit.json && vitest run src --coverage",
-    "intTest": "tsc -p integration-test/tsconfig.json && vitest run -r integration-test",
+    "test": "tsc --noEmit && bun test src",
+    "intTest": "tsc -p integration-test/tsconfig.json && bun test integration-test",
     "mdfix": "prettier *.md --write",
     "postversion": "git push && git push --tags",
-    "prepublishOnly": "yarn lint && yarn test && yarn build"
+    "prepublishOnly": "bun run lint && bun run test && bun run build"
   },
   "peerDependencies": {
-    "@mui/material": "^5.1.0"
+    "@mui/material": "^5.15.17"
   },
   "devDependencies": {
-    "@arethetypeswrong/cli": "^0.15.0",
-    "@mui/system": "^5.15.0",
-    "@tsconfig/node18": "^18.2.2",
-    "@types/node": "^20.10.4",
-    "@vitest/coverage-istanbul": "^1.6.0",
+    "@arethetypeswrong/cli": "^0.15.3",
+    "@emotion/styled": "^11.11.5",
+    "@mui/system": "^5.16.0",
+    "@tsconfig/bun": "^1.0.7",
+    "@tsconfig/node18": "^18.2.4",
+    "@types/bun": "latest",
+    "bun-plugin-isolated-decl": "^0.1.1",
     "eslint": "^9.6.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-import-resolver-typescript": "^3.6.1",
-    "eslint-plugin-import": "https://registry.npmjs.org/eslint-plugin-import-x/-/eslint-plugin-import-x-0.5.2.tgz",
+    "eslint-plugin-import": "npm:eslint-plugin-import-x@^0.5.3",
     "eslint-plugin-prettier": "^5.1.3",
-    "eslint-plugin-unicorn": "^54.0.0",
-    "globals": "^15.3.0",
+    "globals": "^15.8.0",
+    "oxc-transform": "^0.17.0",
     "prettier": "3.3.2",
     "react": "^18.3.1",
-    "tsup": "^8.0.1",
-    "tsx": "^4.6.2",
-    "typescript": "^5.3.3",
+    "typescript": "^5.5.3",
     "typescript-eslint": "^8.0.0-alpha.39",
-    "vitest": "^1.6.0"
+    "uglify-js": "^3.18.0"
   },
   "resolutions": {
     "**/@typescript-eslint/utils": "=8.0.0-alpha.39"

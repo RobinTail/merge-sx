@@ -1,4 +1,4 @@
-import { SxProps, Theme } from "@mui/system";
+import type { SxProps, Theme } from "@mui/system";
 import { mergeSx } from "../src";
 import { bench, describe } from "vitest";
 

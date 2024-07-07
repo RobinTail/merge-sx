@@ -15,42 +15,42 @@ jobs:
   unitTest:
     runs-on: ubuntu-latest
     steps:
-      - name: Get yarn cache dir
-        id: yarnCache
-        run: echo "dir=$(yarn cache dir)" >> $GITHUB_OUTPUT
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Install Node.js
-        uses: actions/setup-node@v4
+      - name: Install bun
+        uses: oven-sh/setup-bun@v2
         with:
-          node-version: 18.x
+          bun-version: latest
+      - name: Get bun cache dir
+        id: bunCache
+        run: echo "dir=$(bun pm cache)" >> $GITHUB_OUTPUT
       - name: Cache node modules
         uses: actions/cache@v4
         env:
-          cache-name: cache-yarn
+          cache-name: cache-bun
         with:
-          path: ${{ steps.yarnCache.outputs.dir }}
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/yarn.lock') }}
+          path: ${{ steps.bunCache.outputs.dir }}
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/bun.lockb') }}
       - name: Install dependencies
-        run: yarn install
+        run: bun install
       - name: Testing
         run: |
-          yarn lint
-          yarn test
+          bun run lint
+          bun run test
       - name: Coveralls
         uses: coverallsapp/github-action@v2
         continue-on-error: true
         with:
           github-token: ${{ secrets.github_token }}
       - name: Benchmark
-        run: yarn vitest bench --run
+        run: bunx vitest bench --run --outputJson bench.json
       - name: Benchmark processing
         if: ${{ github.event_name == 'pull_request' }}
         run: |
           echo "# Performance benchmark" >> bench.txt
           echo ${{ github.event.pull_request.head.sha }} >> bench.txt
           echo '```' >> bench.txt
-          yarn tsx tools/benchmark.processor.ts >> bench.txt
+          bun run tools/benchmark.processor.ts >> bench.txt
           echo '```' >> bench.txt
       - name: Store results
         if: ${{ github.event_name == 'pull_request' }}
@@ -109,37 +109,38 @@ jobs:
         - 5.15.0
         - latest
     steps:
-      - name: Get yarn cache dir
-        id: yarnCache
-        run: echo "dir=$(yarn cache dir)" >> $GITHUB_OUTPUT
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Install Node.js
-        uses: actions/setup-node@v4
+      - name: Install bun
+        uses: oven-sh/setup-bun@v2
         with:
-          node-version: 18.x
+          bun-version: latest
+      - name: Get bun cache dir
+        id: bunCache
+        run: echo "dir=$(bun pm cache)" >> $GITHUB_OUTPUT
       - name: Cache node modules
         uses: actions/cache@v4
         env:
-          cache-name: cache-yarn
+          cache-name: cache-bun
         with:
-          path: ${{ steps.yarnCache.outputs.dir }}
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/yarn.lock') }}
+          path: ${{ steps.bunCache.outputs.dir }}
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/bun.lockb') }}
       - name: Install dependencies
-        run: yarn install
+        run: bun install
       - name: Build
-        run: yarn build
+        run: bun run build
       - name: Test
         env:
           MUI_VERSION: ${{ matrix.mui-version }}
         run: |
+          bun link
           cat >integration-test/package.json <<EOF
             {
               "name": "integration-test",
               "version": "1.0.0",
               "license": "MIT",
               "dependencies": {
-                "merge-sx": "link:./..",
+                "merge-sx": "link:merge-sx",
                 "@mui/material": "${MUI_VERSION}",
                 "react": "^17.0.2",
                 "react-dom": "^17.0.2"
@@ -147,5 +148,5 @@ jobs:
             }
           EOF
           cat integration-test/package.json
-          yarn install --cwd=integration-test
-          yarn intTest
+          bun --cwd=integration-test install
+          bun run intTest
