@@ -67,7 +67,7 @@
     "typescript-eslint": "^8.0.0-alpha.39"
   },
   "resolutions": {
-    "**/@typescript-eslint/utils": "^8.0.0-alpha.38"
+    "**/@typescript-eslint/utils": "=8.0.0-alpha.39"
   },
   "keywords": [
     "react",
