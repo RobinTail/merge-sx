@@ -2,6 +2,10 @@
 
 ## Version 2
 
+### v2.0.3
+
+- Technical release before v3: several chores, no changes.
+
 ### v2.0.2
 
 - Replaced `any` with `unknown` for internally used type.
