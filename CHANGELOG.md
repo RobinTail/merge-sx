@@ -9,7 +9,7 @@
   - DTS is built using [bun plugin Isolated Declarations](https://github.com/ryoppippi/bun-plugin-isolated-decl)
     that runs [oxc transformer](https://www.npmjs.com/package/oxc-transform) under the hood;
   - CJS is built using [tsc](https://www.typescriptlang.org/docs/handbook/compiler-options.html)
-    and minified using [jsmin](https://www.npmjs.com/package/jsmin).
+    and minified using [uglify-js](https://www.npmjs.com/package/uglify-js).
 
 ## Version 2
 
