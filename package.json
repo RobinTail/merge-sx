@@ -68,7 +68,7 @@
     "uglify-js": "^3.18.0"
   },
   "resolutions": {
-    "**/@typescript-eslint/utils": "=8.0.0-alpha.39"
+    "**/@typescript-eslint/utils": "=8.0.0-alpha.41"
   },
   "keywords": [
     "react",
