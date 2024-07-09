@@ -64,11 +64,11 @@
     "prettier": "3.3.2",
     "react": "^18.3.1",
     "typescript": "^5.5.3",
-    "typescript-eslint": "^8.0.0-alpha.39",
+    "typescript-eslint": "^8.0.0-alpha.41",
     "uglify-js": "^3.18.0"
   },
   "resolutions": {
-    "**/@typescript-eslint/utils": "=8.0.0-alpha.39"
+    "**/@typescript-eslint/utils": "=8.0.0-alpha.41"
   },
   "keywords": [
     "react",
