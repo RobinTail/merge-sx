@@ -36,7 +36,7 @@
     "lint": "bun run biome check",
     "test": "tsc --noEmit && bun test src",
     "intTest": "tsc -p integration-test/tsconfig.json && bun test integration-test",
-    "mdfix": "prettier *.md --write",
+    "mdfix": "bunx --bun prettier *.md --write",
     "postversion": "git push && git push --tags",
     "prepublishOnly": "bun run lint && bun run test && bun run build"
   },
@@ -54,7 +54,6 @@
     "bun-plugin-isolated-decl": "^0.1.1",
     "globals": "^15.8.0",
     "oxc-transform": "^0.19.0",
-    "prettier": "3.3.2",
     "react": "^18.3.1",
     "typescript": "^5.5.3",
     "uglify-js": "^3.18.0"
