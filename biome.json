@@ -11,6 +11,7 @@
   },
   "linter": {
     "enabled": true,
+    "ignore": ["dist/", "coverage/"],
     "rules": {
       "recommended": true,
       "complexity": {
@@ -80,8 +81,7 @@
         "useNamespaceKeyword": "error",
         "useValidTypeof": "error"
       }
-    },
-    "ignore": ["dist/", "coverage/"]
+    }
   },
   "overrides": [
     {
