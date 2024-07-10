@@ -18,10 +18,7 @@
       }
     }
   },
-  "files": [
-    "dist",
-    "*.md"
-  ],
+  "files": ["dist", "*.md"],
   "sideEffects": false,
   "repository": {
     "type": "git",
@@ -36,7 +33,7 @@
   "scripts": {
     "build:cjs": "tsc -p tsconfig.cjs.json && uglifyjs dist/index.js -c -m -o dist/index.cjs",
     "build": "bun run build:cjs && bun run tools/build.ts && cp dist/index.d.ts dist/index.d.cts && attw --pack",
-    "lint": "bun run biome check --log-level=info",
+    "lint": "bun run biome check",
     "test": "tsc --noEmit && bun test src",
     "intTest": "tsc -p integration-test/tsconfig.json && bun test integration-test",
     "mdfix": "prettier *.md --write",
