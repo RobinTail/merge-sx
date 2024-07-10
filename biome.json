@@ -1,10 +1,18 @@
 {
   "$schema": "https://biomejs.dev/schemas/1.8.3/schema.json",
   "organizeImports": { "enabled": true },
+  "formatter": {
+    "enabled": true,
+    "indentStyle": "space",
+    "ignore": ["dist/", "coverage/", "bench.json"]
+  },
+  "javascript": {
+    "globals": ["Bun"]
+  },
   "linter": {
     "enabled": true,
     "rules": {
-      "recommended": false,
+      "recommended": true,
       "complexity": {
         "noExtraBooleanCast": "error",
         "noMultipleSpacesInRegularExpressionLiterals": "error",
@@ -75,18 +83,15 @@
     },
     "ignore": ["dist/", "coverage/"]
   },
-  "formatter": {
-    "enabled": true,
-    "indentStyle": "space",
-    "ignore": ["dist/", "coverage/", "bench.json"]
-  },
-  "javascript": {
-    "globals": ["Bun"]
-  },
   "overrides": [
     {
-      "include": ["**/*.spec.ts"],
-      "linter": { "rules": { "suspicious": { "noExplicitAny": "off" } } }
+      "include": ["**/*.spec.ts", "tools/*.ts"],
+      "linter": {
+        "rules": {
+          "suspicious": { "noExplicitAny": "off" },
+          "performance": { "noAccumulatingSpread": "off" }
+        }
+      }
     }
   ]
 }
