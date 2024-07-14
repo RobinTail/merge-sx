@@ -14,5 +14,4 @@ jobs:
         with:
           node-version: 18
       - uses: fregante/setup-git-user@v2
-      - run: yarn install
       - run: npm version minor
