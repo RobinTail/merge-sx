@@ -2,14 +2,19 @@
 
 ## Version 3
 
+### v3.0.1
+
+- Fixed peer dependency: the minimal `@mui/material` version set back to `5.1.0`.
+
 ### v3.0.0
 
-- There are no breaking changes, but the distribution build process has changed:
+- There are no breaking changes (\*), but the distribution build process has changed:
   - ESM is built using [bun](https://bun.sh/);
   - DTS is built using [bun plugin Isolated Declarations](https://github.com/ryoppippi/bun-plugin-isolated-decl)
     that runs [oxc transformer](https://www.npmjs.com/package/oxc-transform) under the hood;
   - CJS is built using [tsc](https://www.typescriptlang.org/docs/handbook/compiler-options.html)
     and minified using [uglify-js](https://www.npmjs.com/package/uglify-js).
+- (\*) — a peer dependency increase was found later and fixed in 3.0.1.
 
 ## Version 2
 
