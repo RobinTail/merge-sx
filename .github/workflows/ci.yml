@@ -108,6 +108,7 @@ jobs:
         - 5.13.0
         - 5.15.0
         - latest
+        - next
     steps:
       - name: Checkout
         uses: actions/checkout@v4
