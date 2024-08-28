@@ -41,7 +41,7 @@
     "prepublishOnly": "bun run lint && bun run test && bun run build"
   },
   "peerDependencies": {
-    "@mui/material": "^5.1.0 | ^6.0.0"
+    "@mui/material": "^5.1.0 || ^6.0.0"
   },
   "devDependencies": {
     "@arethetypeswrong/cli": "^0.15.3",
