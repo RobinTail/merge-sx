@@ -2,6 +2,10 @@
 
 ## Version 3
 
+### v3.1.0
+
+- Supporting Material UI v6.
+
 ### v3.0.1
 
 - Fixed peer dependency: the minimal `@mui/material` version set back to `5.1.0`.
