@@ -107,6 +107,8 @@ jobs:
         - 5.11.0
         - 5.13.0
         - 5.15.0
+        - ^5
+        - 6.0.0
         - latest
     steps:
       - name: Checkout
