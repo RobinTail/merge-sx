@@ -41,13 +41,13 @@
     "prepublishOnly": "bun run lint && bun run test && bun run build"
   },
   "peerDependencies": {
-    "@mui/material": "^5.1.0"
+    "@mui/material": "^5.1.0 || ^6.0.0"
   },
   "devDependencies": {
     "@arethetypeswrong/cli": "^0.15.3",
     "@biomejs/biome": "1.8.3",
     "@emotion/styled": "^11.11.5",
-    "@mui/system": "^5.16.1",
+    "@mui/system": "^6.0.0",
     "@tsconfig/bun": "^1.0.7",
     "@tsconfig/node18": "^18.2.4",
     "@types/bun": "latest",
