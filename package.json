@@ -1,6 +1,6 @@
 {
   "name": "merge-sx",
-  "version": "3.1.0",
+  "version": "3.2.0-beta.1",
   "description": "Combines multiple SxProps for Material UI components.",
   "main": "dist/index.cjs",
   "module": "dist/index.js",
@@ -18,7 +18,10 @@
       }
     }
   },
-  "files": ["dist", "*.md"],
+  "files": [
+    "dist",
+    "*.md"
+  ],
   "sideEffects": false,
   "repository": {
     "type": "git",
@@ -31,8 +34,7 @@
   },
   "license": "MIT",
   "scripts": {
-    "build:cjs": "tsc -p tsconfig.cjs.json && uglifyjs dist/index.js -c -m -o dist/index.cjs",
-    "build": "bun run build:cjs && bun run tools/build.ts && cp dist/index.d.ts dist/index.d.cts && attw --pack",
+    "build": "tsdown && attw --pack",
     "lint": "bun run biome check",
     "test": "tsc --noEmit && bun test src",
     "intTest": "tsc -p integration-test/tsconfig.json && bun test integration-test",
@@ -49,13 +51,10 @@
     "@emotion/styled": "^11.11.5",
     "@mui/system": "^6.0.0",
     "@tsconfig/bun": "^1.0.7",
-    "@tsconfig/node18": "^18.2.4",
     "@types/bun": "latest",
-    "bun-plugin-isolated-decl": "^0.1.1",
-    "oxc-transform": "^0.25.0",
     "react": "^18.3.1",
-    "typescript": "^5.5.3",
-    "uglify-js": "^3.18.0"
+    "tsdown": "^0.2.10",
+    "typescript": "^5.5.3"
   },
   "keywords": [
     "react",
