@@ -7,5 +7,5 @@ export default defineConfig({
   clean: true,
   platform: "neutral",
   dts: true,
-  minify: false,
+  minify: true,
 });
