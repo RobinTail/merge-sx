@@ -2,6 +2,10 @@
 
 ## Version 3
 
+### v3.2.0
+
+- Builder changed to `tsdown` thanks to [@ryoppippi](https://github.com/ryoppippi).
+
 ### v3.1.0
 
 - Supporting Material UI v6.
