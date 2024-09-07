@@ -50,34 +50,20 @@ jobs:
       - name: Benchmark
         run: bunx vitest bench --run --outputJson bench.json
       - name: Benchmark processing
-        if: ${{ github.event_name == 'pull_request' }}
+        id: bench
+        if: github.event_name == 'pull_request'
         run: |
-          echo "# Performance benchmark" >> bench.txt
-          echo ${{ github.event.pull_request.head.sha }} >> bench.txt
-          echo '```' >> bench.txt
-          bun run tools/benchmark.processor.ts >> bench.txt
-          echo '```' >> bench.txt
-      - name: Store results
-        if: ${{ github.event_name == 'pull_request' }}
-        uses: actions/upload-artifact@v4
-        with:
-          name: bench
-          path: bench.txt
-
-  comment:
-    needs: unitTest
-    runs-on: ubuntu-latest
-    if: ${{ github.event_name == 'pull_request' }}
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Fetch benchmark results
-        uses: actions/download-artifact@v4
-        with:
-          name: bench
+          echo 'comment<<EOF' >> $GITHUB_OUTPUT
+          echo "# Performance benchmark" >> $GITHUB_OUTPUT
+          echo ${{ github.event.pull_request.head.sha }} >> $GITHUB_OUTPUT
+          echo '```' >> $GITHUB_OUTPUT
+          bun run tools/benchmark.processor.ts >> $GITHUB_OUTPUT
+          echo '```' >> $GITHUB_OUTPUT
+          echo 'EOF' >> $GITHUB_OUTPUT
       - name: Find Comment
-        uses: peter-evans/find-comment@v3
         id: fc
+        if: github.event_name == 'pull_request'
+        uses: peter-evans/find-comment@v3
         with:
           issue-number: ${{ github.event.pull_request.number }}
           comment-author: 'github-actions[bot]'
@@ -89,7 +75,7 @@ jobs:
           comment-id: ${{ steps.fc.outputs.comment-id }}
           edit-mode: ${{ steps.fc.outputs.comment-id == '' && 'append' || 'replace' }}
           reactions: ${{ steps.fc.outputs.comment-id == '' && 'rocket' || 'hooray' }}
-          body-file: bench.txt
+          body: ${{ steps.bench.outputs.comment }}
 
   integrationTest:
     needs: unitTest
