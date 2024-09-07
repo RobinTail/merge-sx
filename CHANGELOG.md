@@ -2,6 +2,13 @@
 
 ## Version 3
 
+### v3.2.1
+
+- Technical update:
+  - Faster CI with bun lock-file diff control;
+  - Reduced dev dependencies;
+  - Upgraded dependencies.
+
 ### v3.2.0
 
 - Builder changed to `tsdown` thanks to [@ryoppippi](https://github.com/ryoppippi).
