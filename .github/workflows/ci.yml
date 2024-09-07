@@ -37,7 +37,7 @@ jobs:
         run: bun install
       - name: Show the bun lock diff
         if: github.event_name == 'pull_request'
-        uses: RobinTail/bun-diff-action@v0.3.1
+        uses: RobinTail/bun-diff-action@v0.3.2
       - name: Testing
         run: |
           bun run lint
@@ -82,21 +82,14 @@ jobs:
           issue-number: ${{ github.event.pull_request.number }}
           comment-author: 'github-actions[bot]'
           body-includes: benchmark
-      - name: Create comment
-        if: steps.fc.outputs.comment-id == ''
+      - name: Maintain comment
         uses: peter-evans/create-or-update-comment@v4
         with:
           issue-number: ${{ github.event.pull_request.number }}
-          body-file: bench.txt
-          reactions: rocket
-      - name: Update comment
-        if: steps.fc.outputs.comment-id != ''
-        uses: peter-evans/create-or-update-comment@v4
-        with:
           comment-id: ${{ steps.fc.outputs.comment-id }}
-          edit-mode: replace
+          edit-mode: ${{ steps.fc.outputs.comment-id == '' && 'append' || 'replace' }}
+          reactions: ${{ steps.fc.outputs.comment-id == '' && 'rocket' || 'hooray' }}
           body-file: bench.txt
-          reactions: hooray
 
   integrationTest:
     needs: unitTest
