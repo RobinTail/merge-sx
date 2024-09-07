@@ -35,7 +35,7 @@ jobs:
           key: ${{ runner.os }}-build-cache-bun-${{ steps.bunCache.outputs.hash }}
       - name: Install dependencies
         run: bun install
-      - id: diff
+      - name: Show the bun lock diff
         if: github.event_name == 'pull_request'
         uses: RobinTail/bun-diff-action@v0.0.4
       - name: Testing
