@@ -60,7 +60,7 @@ jobs:
           bun run tools/benchmark.processor.ts >> $GITHUB_OUTPUT
           echo '```' >> $GITHUB_OUTPUT
           echo 'EOF' >> $GITHUB_OUTPUT
-      - name: Find Comment
+      - name: Find Benchmark Comment
         id: fc
         if: github.event_name == 'pull_request'
         uses: peter-evans/find-comment@v3
@@ -68,7 +68,7 @@ jobs:
           issue-number: ${{ github.event.pull_request.number }}
           comment-author: 'github-actions[bot]'
           body-includes: benchmark
-      - name: Maintain comment
+      - name: Maintain Benchmark Comment
         if: github.event_name == 'pull_request'
         uses: peter-evans/create-or-update-comment@v4
         with:
