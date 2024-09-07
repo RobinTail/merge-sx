@@ -36,7 +36,7 @@ jobs:
       - name: Install dependencies
         run: bun install
       - id: diff
-        uses: RobinTail/bun-diff-action@v0.0.4
+        uses: RobinTail/bun-diff-action@v0
       - name: Testing
         run: |
           bun run lint
