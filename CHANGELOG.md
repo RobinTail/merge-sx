@@ -2,6 +2,10 @@
 
 ## Version 3
 
+### v3.2.2
+
+- JSDoc restored on the distributed declaration files (since 3.0.0).
+
 ### v3.2.1
 
 - Technical update:
