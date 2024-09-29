@@ -46,14 +46,14 @@
     "@mui/material": "^5.1.0 || ^6.0.0"
   },
   "devDependencies": {
-    "@arethetypeswrong/cli": "^0.16.1",
+    "@arethetypeswrong/cli": "^0.16.4",
     "@biomejs/biome": "1.9.2",
     "@emotion/styled": "^11.13.0",
     "@tsconfig/bun": "^1.0.7",
     "@types/bun": "latest",
     "react": "^18.3.1",
-    "tsdown": "^0.2.13",
-    "typescript": "^5.5.4"
+    "tsdown": "^0.2.16",
+    "typescript": "^5.6.2"
   },
   "keywords": [
     "react",
