@@ -47,7 +47,7 @@
   },
   "devDependencies": {
     "@arethetypeswrong/cli": "^0.16.4",
-    "@biomejs/biome": "1.9.2",
+    "@biomejs/biome": "1.9.3",
     "@emotion/styled": "^11.13.0",
     "@tsconfig/bun": "^1.0.7",
     "@types/bun": "latest",
