@@ -55,7 +55,7 @@ support for conditional and optional inclusions, providing a very simple and sem
 
 The utility has been tested to support up to 65535 arguments.
 
-![Performance chart](performance.svg)
+![Performance chart](https://raw.githubusercontent.com/RobinTail/merge-sx/refs/heads/master/performance.svg)
 
 ## Examples
 
