@@ -1,3 +1,5 @@
+[install]
+peer = false
 [test]
 coverage = true # always enable coverage
 coverageReporter  = ["text", "lcov"]
