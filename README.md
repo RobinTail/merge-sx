@@ -55,13 +55,7 @@ support for conditional and optional inclusions, providing a very simple and sem
 
 The utility has been tested to support up to 65535 arguments.
 
-```text
-┌─────────────┬──────────┬─────────┬────────┬───────┐
-│ N arguments │    10    │   100   │  1000  │ 10000 │
-├─────────────┼──────────┼─────────┼────────┼───────┤
-│ ops/s       │ 13615624 │ 1273083 │ 122746 │ 14686 │
-└─────────────┴──────────┴─────────┴────────┴───────┘
-```
+![Performance chart](performance.svg)
 
 ## Examples
 
