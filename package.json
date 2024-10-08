@@ -32,6 +32,8 @@
     "name": "Anna Bocharova",
     "url": "https://robintail.cz"
   },
+  "bugs": "https://github.com/RobinTail/merge-sx/issues",
+  "funding": "https://github.com/sponsors/RobinTailhttps://github.com/sponsors/RobinTail",
   "license": "MIT",
   "scripts": {
     "build": "tsdown && attw --pack",
