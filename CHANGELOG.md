@@ -2,6 +2,13 @@
 
 ## Version 3
 
+### v3.2.3
+
+- Dependencies update:
+  - Tested with MUI 6.1;
+- Documentation adjustment;
+- There is now an opportunity to support the project with sponsorship: https://github.com/sponsors/RobinTail
+
 ### v3.2.2
 
 - JSDoc restored on the distributed declaration files (since 3.0.0).
