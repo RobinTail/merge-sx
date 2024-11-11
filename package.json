@@ -48,7 +48,7 @@
     "@mui/material": "^5.1.0 || ^6.0.0"
   },
   "devDependencies": {
-    "@arethetypeswrong/cli": "^0.16.4",
+    "@arethetypeswrong/cli": "^0.17.0",
     "@biomejs/biome": "1.9.4",
     "@emotion/styled": "^11.13.0",
     "@mui/material": "^6.1.2",
