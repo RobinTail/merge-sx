@@ -11,9 +11,7 @@
     "lint": "bun run biome check",
     "test": "bun run --filter merge-sx test",
     "intTest": "tsc -p packages/integration-test && bun test --filter integration-test",
-    "mdfix": "bunx --bun prettier *.md --write",
-    "postversion": "git push && git push --tags",
-    "prepublishOnly": "bun run lint && bun run test && bun run build"
+    "mdfix": "bunx --bun prettier *.md --write"
   },
   "devDependencies": {
     "@arethetypeswrong/cli": "^0.17.0",

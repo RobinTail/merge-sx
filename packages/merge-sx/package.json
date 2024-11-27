@@ -34,7 +34,9 @@
   },
   "scripts": {
     "build": "tsdown && attw --pack",
-    "test": "tsc --noEmit && bun test"
+    "test": "tsc --noEmit && bun test",
+    "postversion": "git push && git push --tags",
+    "prepublishOnly": "biome check && bun run test && bun run build"
   },
   "peerDependencies": {
     "@mui/material": "^5.1.0 || ^6.0.0"
