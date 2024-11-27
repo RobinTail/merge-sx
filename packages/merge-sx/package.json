@@ -1,0 +1,62 @@
+{
+  "name": "merge-sx",
+  "version": "3.2.4",
+  "description": "Combines multiple SxProps for Material UI components.",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
+  "files": [
+    "dist",
+    "*.md"
+  ],
+  "sideEffects": false,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RobinTail/merge-sx.git"
+  },
+  "homepage": "https://github.com/RobinTail/merge-sx",
+  "author": {
+    "name": "Anna Bocharova",
+    "url": "https://robintail.cz"
+  },
+  "scripts": {
+    "build": "tsdown && attw --pack"
+  },
+  "peerDependencies": {
+    "@mui/material": "^5.1.0 || ^6.0.0"
+  },
+  "devDependencies": {
+    "@emotion/styled": "^11.13.0",
+    "@mui/material": "^6.1.2",
+    "react": "^18.3.1"
+  },
+  "keywords": [
+    "react",
+    "typescript",
+    "styled-components",
+    "reactjs",
+    "material-ui",
+    "styling",
+    "css-in-js",
+    "jss",
+    "strict",
+    "mui",
+    "merge",
+    "combine",
+    "merging",
+    "muiv5"
+  ]
+}
