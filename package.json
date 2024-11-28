@@ -11,7 +11,7 @@
     "lint": "bun run biome check",
     "test": "bun run --filter merge-sx test",
     "intTest": "tsc -p packages/integration-test && bun test --filter integration-test",
-    "mdfix": "bunx --bun prettier *.md --write",
+    "mdfix": "bunx --bun prettier packages/merge-sx/*.md --write",
     "version": "bun run tools/version.ts"
   },
   "devDependencies": {
