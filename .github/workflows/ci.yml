@@ -120,20 +120,19 @@ jobs:
         env:
           MUI_VERSION: ${{ matrix.mui-version }}
         run: |
-          bun link
-          cat >integration-test/package.json <<EOF
+          cat >packages/integration-test/package.json <<EOF
             {
               "name": "integration-test",
               "version": "1.0.0",
               "license": "MIT",
               "dependencies": {
-                "merge-sx": "link:merge-sx",
+                "merge-sx": "workspace:*",
                 "@mui/material": "${MUI_VERSION}",
                 "react": "^17.0.2",
                 "react-dom": "^17.0.2"
               }
             }
           EOF
-          cat integration-test/package.json
-          bun --cwd=integration-test install
+          cat packages/integration-test/package.json
+          bun install --filter integration-test
           bun run intTest

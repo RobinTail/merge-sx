@@ -2,6 +2,13 @@
 
 ## Version 3
 
+### v3.3.0
+
+- Technical update:
+  - Upgraded all dependencies and tested on latest MUI 6;
+  - Implemented workspaces to avoid duplicated dependencies for the integration test;
+  - Releasing using `bun publish`.
+
 ### v3.2.3
 
 - Dependencies update:
