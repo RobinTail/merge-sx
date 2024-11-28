@@ -14,4 +14,4 @@ jobs:
         with:
           node-version: 18
       - uses: fregante/setup-git-user@v2
-      - run: npm version patch
+      - run: bun version patch

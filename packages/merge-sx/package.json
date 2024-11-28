@@ -35,7 +35,6 @@
   "scripts": {
     "build": "tsdown && attw --pack",
     "test": "tsc --noEmit && bun test",
-    "postversion": "git push && git push --tags",
     "prepublishOnly": "biome check && bun run test && bun run build"
   },
   "peerDependencies": {
