@@ -9,7 +9,7 @@
   "scripts": {
     "build": "bun run --filter merge-sx build",
     "lint": "bun run biome check",
-    "test": "bun run --filter merge-sx test",
+    "test": "bun test --filter merge-sx",
     "intTest": "tsc -p packages/integration-test && bun test --filter integration-test",
     "mdfix": "bunx --bun prettier packages/merge-sx/*.md --write",
     "version": "bun run tools/version.ts"
