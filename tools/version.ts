@@ -27,7 +27,7 @@ if (!isValidVersion(current))
 
 if (await isDirty())
   throw new Error(
-    "There are uncommitted changes. Commit them before releasing or run with FORCE=true.",
+    "There are uncommitted changes. Commit them before releasing.",
   );
 
 const desired = isValidVersion(target)
@@ -39,10 +39,12 @@ const desired = isValidVersion(target)
 if (!desired) throw new Error("Failed to bump");
 console.debug(current, "—>", desired);
 
-await Bun.write(
-  path,
-  JSON.stringify(Object.assign(json, { version: desired }), null, 2),
+const output = JSON.stringify(
+  Object.assign(json, { version: desired }),
+  null,
+  2,
 );
+await Bun.write(path, `${output}\n`);
 
 await $`git add ${path}`;
 await $`git commit -m v${desired}`;
