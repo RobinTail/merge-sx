@@ -10,8 +10,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - name: Install bun
+        uses: oven-sh/setup-bun@v2
         with:
-          node-version: 18
+          bun-version: latest
       - uses: fregante/setup-git-user@v2
       - run: bun version minor
