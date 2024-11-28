@@ -30,6 +30,7 @@ jobs:
           bun-version: latest
       - name: Install dependencies
         run: bun install
-      - run: npm publish --tag ${{ inputs.tag }}
+      - run: bun publish --tag ${{ inputs.tag }}
+        working-directory: ./packages/merge-sx
         env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_KEY}}
+          NPM_KEY: ${{secrets.NPM_KEY}}
