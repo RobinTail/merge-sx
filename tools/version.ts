@@ -4,18 +4,17 @@ import { type ReleaseType, inc, valid as isValidVersion } from "semver";
 
 const path = "./packages/merge-sx/package.json";
 
+const variants: ReleaseType[] = [
+  "major",
+  "premajor",
+  "minor",
+  "preminor",
+  "patch",
+  "prepatch",
+  "prerelease",
+];
 const isValidTarget = (subject: string): subject is ReleaseType =>
-  (
-    [
-      "major",
-      "premajor",
-      "minor",
-      "preminor",
-      "patch",
-      "prepatch",
-      "prerelease",
-    ] satisfies ReleaseType[] as string[]
-  ).includes(subject);
+  (variants as string[]).includes(subject);
 
 const isDirty = async () => (await $`git status --porcelain`.quiet()).text();
 
