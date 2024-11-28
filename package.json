@@ -7,7 +7,7 @@
   },
   "license": "MIT",
   "scripts": {
-    "build": "bun run --filter merge-sx build",
+    "build": "bun run --cwd packages/merge-sx build",
     "lint": "bun run biome check",
     "test": "bun test --filter merge-sx",
     "intTest": "tsc -p packages/integration-test && bun test --filter integration-test",
