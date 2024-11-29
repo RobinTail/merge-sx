@@ -32,6 +32,7 @@
     "name": "Anna Bocharova",
     "url": "https://robintail.cz"
   },
+  "license": "MIT",
   "scripts": {
     "build": "tsdown && attw --pack",
     "test": "tsc --noEmit && bun test",
