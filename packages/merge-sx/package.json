@@ -34,9 +34,10 @@
   },
   "license": "MIT",
   "scripts": {
-    "build": "tsdown && attw --pack",
+    "build": "tsdown",
+    "postbuild": "attw --pack",
     "test": "tsc --noEmit && bun test",
-    "prepack": "cp ../*.md ../LICENSE ./",
+    "prepack": "cp ../../*.md ../../LICENSE ./",
     "prepublishOnly": "bun biome check && bun run test && bun run build"
   },
   "peerDependencies": {
