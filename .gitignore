@@ -4,3 +4,5 @@ dist
 coverage
 yarn-error.log
 bench.json
+packages/merge-sx/*.md
+packages/merge-sx/LICENSE

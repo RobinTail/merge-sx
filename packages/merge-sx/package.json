@@ -1,6 +1,6 @@
 {
   "name": "merge-sx",
-  "version": "3.3.1",
+  "version": "3.3.2-beta.1",
   "description": "Combines multiple SxProps for Material UI components.",
   "main": "dist/index.cjs",
   "module": "dist/index.js",
@@ -34,8 +34,10 @@
   },
   "license": "MIT",
   "scripts": {
-    "build": "tsdown && attw --pack",
+    "build": "tsdown",
+    "postbuild": "attw --pack",
     "test": "tsc --noEmit && bun test",
+    "prepack": "cp ../../*.md ../../LICENSE ./",
     "prepublishOnly": "bun biome check && bun run test && bun run build"
   },
   "peerDependencies": {
