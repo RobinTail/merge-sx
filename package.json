@@ -21,7 +21,7 @@
     "@types/bun": "latest",
     "@types/semver": "^7.5.8",
     "semver": "^7.6.3",
-    "tsdown": "^0.5.0",
+    "tsdown": "^0.6.0",
     "typescript": "^5.7.2"
   }
 }
