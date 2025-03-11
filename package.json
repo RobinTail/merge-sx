@@ -15,13 +15,13 @@
     "version": "bun run tools/version.ts"
   },
   "devDependencies": {
-    "@arethetypeswrong/cli": "^0.17.0",
+    "@arethetypeswrong/cli": "^0.17.4",
     "@biomejs/biome": "1.9.4",
     "@tsconfig/bun": "^1.0.7",
-    "@types/bun": "latest",
+    "@types/bun": "^1.2.5",
     "@types/semver": "^7.5.8",
-    "semver": "^7.6.3",
-    "tsdown": "^0.6.0",
-    "typescript": "^5.7.2"
+    "semver": "^7.7.1",
+    "tsdown": "^0.6.6",
+    "typescript": "^5.8.2"
   }
 }
