@@ -2,6 +2,10 @@
 
 ## Version 3
 
+### v3.3.2
+
+- Technical update.
+
 ### v3.3.1
 
 - Restored missing license in the distributed package.json.
