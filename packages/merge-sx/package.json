@@ -44,8 +44,8 @@
     "@mui/material": "^5.1.0 || ^6.0.0"
   },
   "devDependencies": {
-    "@emotion/styled": "^11.13.5",
-    "@mui/material": "^6.1.9",
+    "@emotion/styled": "^11.14.0",
+    "@mui/material": "^6.4.7",
     "react": "^19.0.0"
   },
   "keywords": [
