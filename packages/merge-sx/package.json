@@ -41,11 +41,11 @@
     "prepublishOnly": "bun biome check && bun run test && bun run build"
   },
   "peerDependencies": {
-    "@mui/material": "^5.1.0 || ^6.0.0"
+    "@mui/material": "^5.1.0 || ^6.0.0 || ^7.0.0"
   },
   "devDependencies": {
     "@emotion/styled": "^11.14.0",
-    "@mui/material": "^6.4.7",
+    "@mui/material": "^7.0.0",
     "react": "^19.0.0"
   },
   "keywords": [
