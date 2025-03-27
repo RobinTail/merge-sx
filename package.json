@@ -18,10 +18,10 @@
     "@arethetypeswrong/cli": "^0.17.4",
     "@biomejs/biome": "1.9.4",
     "@tsconfig/bun": "^1.0.7",
-    "@types/bun": "^1.2.5",
-    "@types/semver": "^7.5.8",
+    "@types/bun": "^1.2.6",
+    "@types/semver": "^7.7.0",
     "semver": "^7.7.1",
-    "tsdown": "^0.6.8",
+    "tsdown": "^0.6.9",
     "typescript": "^5.8.2"
   }
 }
