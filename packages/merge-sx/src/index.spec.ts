@@ -1,8 +1,17 @@
 import { describe, expect, it } from "bun:test";
 import type { SxProps, Theme } from "@mui/system";
+import { expectTypeOf } from "expect-type";
 import { mergeSx } from "./index";
 
 describe("mergeSx()", () => {
+  describe("types", () => {
+    expectTypeOf(mergeSx).toBeCallableWith({ mt: 1 });
+    expectTypeOf(mergeSx).toBeCallableWith({ mt: 1 }, { mb: 1 });
+    expectTypeOf(mergeSx).toBeCallableWith(false, undefined, null);
+    expectTypeOf(mergeSx).returns.toExtend<SxProps>();
+    expectTypeOf(mergeSx<Theme>({ mt: 1 })).toEqualTypeOf<SxProps<Theme>>();
+  });
+
   describe("simple cases", () => {
     it("combines two SxProps", () => {
       expect(mergeSx({ mt: 1 }, { mb: 1 })).toEqual([{ mt: 1 }, { mb: 1 }]);
