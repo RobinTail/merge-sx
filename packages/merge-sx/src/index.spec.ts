@@ -10,6 +10,9 @@ describe("mergeSx()", () => {
     expectTypeOf(mergeSx).toBeCallableWith(false, undefined, null);
     expectTypeOf(mergeSx).returns.toExtend<SxProps>();
     expectTypeOf(mergeSx<Theme>({ mt: 1 })).toEqualTypeOf<SxProps<Theme>>();
+    expectTypeOf(
+      mergeSx((theme: Theme) => ({ mt: theme.spacing(1) })),
+    ).toEqualTypeOf<SxProps<Theme>>();
   });
 
   describe("simple cases", () => {
