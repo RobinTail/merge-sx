@@ -46,6 +46,7 @@
   "devDependencies": {
     "@emotion/styled": "^11.14.0",
     "@mui/material": "^7.0.0",
+    "expect-type": "^1.2.0",
     "react": "^19.0.0"
   },
   "keywords": [

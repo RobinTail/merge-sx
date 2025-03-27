@@ -1,6 +1,8 @@
 {
   "private": true,
-  "workspaces": ["packages/*"],
+  "workspaces": [
+    "packages/*"
+  ],
   "author": {
     "name": "Anna Bocharova",
     "url": "https://robintail.cz"
@@ -9,7 +11,7 @@
   "scripts": {
     "build": "bun run --cwd packages/merge-sx build",
     "lint": "bun run biome check",
-    "test": "bun test --filter merge-sx",
+    "test": "bun run --cwd packages/merge-sx test",
     "intTest": "tsc -p packages/integration-test && bun test --filter integration-test",
     "mdfix": "bunx --bun prettier packages/merge-sx/*.md --write",
     "version": "bun run tools/version.ts"
