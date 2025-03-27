@@ -2,6 +2,10 @@
 
 ## Version 3
 
+### v3.4.0
+
+- Supporting MUI 7.
+
 ### v3.3.2
 
 - Technical update.
