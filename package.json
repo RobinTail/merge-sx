@@ -17,7 +17,7 @@
     "version": "bun run tools/version.ts"
   },
   "devDependencies": {
-    "@arethetypeswrong/cli": "^0.17.4",
+    "@arethetypeswrong/cli": "^0.18.0",
     "@biomejs/biome": "1.9.4",
     "@tsconfig/bun": "^1.0.7",
     "@types/bun": "^1.2.6",
