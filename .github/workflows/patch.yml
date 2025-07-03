@@ -18,3 +18,4 @@ jobs:
         run: bun install
       - uses: fregante/setup-git-user@v2
       - run: bun pm version patch
+        working-directory: packages/merge-sx
