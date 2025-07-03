@@ -17,4 +17,4 @@ jobs:
       - name: Install dependencies
         run: bun install
       - uses: fregante/setup-git-user@v2
-      - run: bun version minor
+      - run: bun pm version minor
