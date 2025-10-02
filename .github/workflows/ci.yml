@@ -60,7 +60,7 @@ jobs:
       - name: Find Benchmark Comment
         id: fc
         if: github.event_name == 'pull_request'
-        uses: peter-evans/find-comment@v3
+        uses: peter-evans/find-comment@v4
         with:
           issue-number: ${{ github.event.pull_request.number }}
           comment-author: 'github-actions[bot]'
