@@ -2,7 +2,9 @@
   "extends": "@tsconfig/bun/tsconfig.json",
   "compilerOptions": {
     "paths": {
-      "@mui/system": ["./node_modules/.bun/@mui+system@7.0.0/node_modules/@mui/system"]
+      "@mui/system": [
+        "./node_modules/.bun/@mui+system@7.0.0/node_modules/@mui/system"
+      ]
     }
   }
 }
