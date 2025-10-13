@@ -1,5 +1,5 @@
 import { describe, expect, it } from "bun:test";
-import type { SxProps, Theme } from "@mui/system";
+import type { SxProps, Theme } from "@mui/material";
 import { expectTypeOf } from "expect-type";
 import { mergeSx } from "./index";
 
