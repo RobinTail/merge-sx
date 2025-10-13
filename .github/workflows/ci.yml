@@ -22,7 +22,7 @@ jobs:
       - name: Install bun
         uses: oven-sh/setup-bun@v2
         with:
-          bun-version: 1.2.23
+          bun-version: 1.3.0
       - name: Get bun cache dir and hash
         id: bunCache
         run: |
@@ -93,7 +93,7 @@ jobs:
       - name: Install bun
         uses: oven-sh/setup-bun@v2
         with:
-          bun-version: 1.2.23
+          bun-version: 1.3.0
       - name: Get bun cache dir and hash
         id: bunCache
         run: |
