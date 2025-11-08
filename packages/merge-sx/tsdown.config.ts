@@ -8,4 +8,6 @@ export default defineConfig({
   platform: "browser",
   dts: true,
   minify: true,
+  fixedExtension: false,
+  attw: { level: "error" },
 });
