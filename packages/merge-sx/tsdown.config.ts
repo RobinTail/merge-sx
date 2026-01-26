@@ -9,5 +9,6 @@ export default defineConfig({
   dts: true,
   minify: true,
   fixedExtension: false,
+  external: ["csstype", "@mui/system"],
   attw: { level: "error" },
 });
