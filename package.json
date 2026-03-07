@@ -13,8 +13,7 @@
     "lint": "bun run biome check",
     "test": "bun run --cwd packages/merge-sx test",
     "intTest": "tsc -p packages/integration-test && bun test --filter integration-test",
-    "mdfix": "bunx --bun prettier packages/merge-sx/*.md --write",
-    "version": "bun run tools/version.ts"
+    "mdfix": "bunx --bun prettier packages/merge-sx/*.md --write"
   },
   "devDependencies": {
     "@arethetypeswrong/cli": "^0.18.0",
