@@ -10,7 +10,7 @@ export default defineConfig({
   minify: true,
   fixedExtension: false,
   deps: {
-    neverBundle: ["csstype", "@mui/system"]
+    neverBundle: ["csstype", "@mui/system"],
   },
   attw: { level: "error" },
 });
