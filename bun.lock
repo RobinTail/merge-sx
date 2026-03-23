@@ -11,7 +11,7 @@
         "@types/semver": "^7.7.0",
         "semver": "^7.7.1",
         "tsdown": "^0.21.0",
-        "typescript": "^6.0.0",
+        "typescript": "^6.0.2",
       },
     },
     "packages/merge-sx": {
