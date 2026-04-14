@@ -17,4 +17,5 @@ jobs:
       - name: Install dependencies
         run: bun install
       - uses: fregante/setup-git-user@v2
-      - run: bun version patch
+      - run: bun pm version patch
+        working-directory: packages/merge-sx
