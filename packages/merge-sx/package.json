@@ -34,7 +34,7 @@
   },
   "license": "MIT",
   "scripts": {
-    "build": "tsdown",
+    "build": "tsdown --config-loader native",
     "test": "tsc --noEmit && bun test",
     "prepack": "cp ../../*.md ../../LICENSE ./",
     "prepublishOnly": "bun biome check && bun run test && bun run build"
