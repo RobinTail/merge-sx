@@ -2,6 +2,7 @@
 peer = false
 registry = { url = "https://registry.npmjs.org", token = "$NPM_KEY" }
 linker = "hoisted"
+minimumReleaseAge = 259200 # seconds
 [test]
 coverage = true # always enable coverage
 coverageReporter  = ["text", "lcov"]
