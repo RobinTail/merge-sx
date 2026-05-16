@@ -79,6 +79,7 @@ jobs:
     needs: unitTest
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
         mui-version:
         - 5.1.0
