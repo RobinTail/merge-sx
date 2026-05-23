@@ -2,6 +2,10 @@
 
 ## Version 3
 
+### v3.5.0
+
+- Supporting MUI 9.
+
 ### v3.4.0
 
 - Supporting MUI 7.
