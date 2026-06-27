@@ -1,5 +1,11 @@
 # Changelog
 
+## Version 4
+
+### v4.0.0
+
+- The package is now distributed as ESM only.
+
 ## Version 3
 
 ### v3.5.0
