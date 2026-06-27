@@ -3,7 +3,7 @@ import { defineConfig } from "tsdown";
 export default defineConfig({
   entry: ["./src/index.ts"],
   outDir: "dist",
-  format: ["esm", "cjs"],
+  format: "esm",
   clean: true,
   platform: "browser",
   dts: true,
@@ -12,5 +12,5 @@ export default defineConfig({
   deps: {
     neverBundle: ["csstype", "@mui/system"],
   },
-  attw: { level: "error" },
+  attw: { level: "error", profile: "esm-only" },
 });
