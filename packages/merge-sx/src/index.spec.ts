@@ -1,18 +1,20 @@
-import { describe, expect, it } from "bun:test";
 import type { SxProps, Theme } from "@mui/system";
 import { expectTypeOf } from "expect-type";
-import { mergeSx } from "./index";
+import { describe, expect, it } from "vitest";
+import { mergeSx } from "./index.ts";
 
 describe("mergeSx()", () => {
   describe("types", () => {
-    expectTypeOf(mergeSx).toBeCallableWith({ mt: 1 });
-    expectTypeOf(mergeSx).toBeCallableWith({ mt: 1 }, { mb: 1 });
-    expectTypeOf(mergeSx).toBeCallableWith(false, undefined, null);
-    expectTypeOf(mergeSx).returns.toExtend<SxProps>();
-    expectTypeOf(mergeSx<Theme>({ mt: 1 })).toEqualTypeOf<SxProps<Theme>>();
-    expectTypeOf(
-      mergeSx((theme: Theme) => ({ mt: theme.spacing(1) })),
-    ).toEqualTypeOf<SxProps<Theme>>();
+    it("operates SxProps of different shapes", () => {
+      expectTypeOf(mergeSx).toBeCallableWith({ mt: 1 });
+      expectTypeOf(mergeSx).toBeCallableWith({ mt: 1 }, { mb: 1 });
+      expectTypeOf(mergeSx).toBeCallableWith(false, undefined, null);
+      expectTypeOf(mergeSx).returns.toExtend<SxProps>();
+      expectTypeOf(mergeSx<Theme>({ mt: 1 })).toEqualTypeOf<SxProps<Theme>>();
+      expectTypeOf(
+        mergeSx((theme: Theme) => ({ mt: theme.spacing(1) })),
+      ).toEqualTypeOf<SxProps<Theme>>();
+    });
   });
 
   describe("simple cases", () => {

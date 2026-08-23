@@ -14,9 +14,6 @@
     "enabled": true,
     "indentStyle": "space"
   },
-  "javascript": {
-    "globals": ["Bun"]
-  },
   "linter": {
     "enabled": true,
     "rules": {

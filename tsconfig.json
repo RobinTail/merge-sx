@@ -1,6 +1,9 @@
 {
-  "extends": "@tsconfig/bun/tsconfig.json",
+  "extends": "@tsconfig/node24/tsconfig.json",
   "compilerOptions": {
-    "types": ["bun"]
+    "allowImportingTsExtensions": true,
+    "erasableSyntaxOnly": true,
+    "verbatimModuleSyntax": true,
+    "noEmit": true
   }
 }

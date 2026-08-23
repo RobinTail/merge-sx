@@ -1,0 +1,5 @@
+packages:
+  - packages/*
+autoInstallPeers: false
+engineStrict: true
+minimumReleaseAge: 4320 # minutes (3 days)
