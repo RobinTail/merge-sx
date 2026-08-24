@@ -2,5 +2,11 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["config:recommended"],
   "dependencyDashboard": false,
-  "minimumReleaseAge": "3 days"
+  "minimumReleaseAge": "3 days",
+  "packageRules": [
+    {
+      "groupName": "Vitest and its coverage provider",
+      "matchPackageNames": ["vitest", "@vitest/*"]
+    }
+  ]
 }
