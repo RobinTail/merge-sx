@@ -109,10 +109,7 @@ jobs:
               "type": "module",
               "dependencies": {
                 "merge-sx": "workspace:*",
-                "@mui/material": "${MUI_VERSION}",
-                "@mui/system": "${MUI_VERSION}",
-                "react": "^19.0.0",
-                "react-dom": "^19.0.0"
+                "@mui/material": "${MUI_VERSION}"
               }
             }
           EOF
