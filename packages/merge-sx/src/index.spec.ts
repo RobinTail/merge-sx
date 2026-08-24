@@ -99,7 +99,7 @@ describe("mergeSx()", () => {
       const styles = Array<SxProps>(65535).fill({ mt: 1 });
       const result = mergeSx(...styles);
       expect(Array.isArray(result)).toBeTruthy();
-      expect((result as any[]).length).toBe(65535);
+      expect((result as unknown[]).length).toBe(65535);
     });
   });
 
