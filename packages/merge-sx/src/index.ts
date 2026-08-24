@@ -19,13 +19,12 @@ export const mergeSx = <T extends object>(
 ): SxProps<T> => {
   const capacitor: SxAsArray<T> = [];
   for (const sx of styles) {
-    if (sx) {
-      if (Array.isArray(sx)) {
-        for (const sub of sx as SxAsArray<T>) 
-          capacitor.push(sub);
-      } else {
-        capacitor.push(sx as PureSx<T>);
-      }
+    if (!sx) continue;
+    if (Array.isArray(sx)) {
+      for (const sub of sx as SxAsArray<T>)
+        capacitor.push(sub);
+    } else {
+      capacitor.push(sx as PureSx<T>);
     }
   }
   return capacitor;
