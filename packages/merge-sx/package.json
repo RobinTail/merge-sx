@@ -28,7 +28,7 @@
   },
   "license": "MIT",
   "scripts": {
-    "build": "tsdown --config-loader native",
+    "build": "tsdown",
     "test": "tsc --noEmit && vitest run --coverage",
     "prepack": "cp ../../*.md ../../LICENSE ./",
     "prepublishOnly": "pnpm exec biome check && pnpm run test && pnpm run build"
