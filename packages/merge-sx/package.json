@@ -39,7 +39,6 @@
   "devDependencies": {
     "@emotion/styled": "^11.14.0",
     "@mui/material": "^9.0.0",
-    "@mui/system": "^9.0.0",
     "expect-type": "^1.2.0",
     "react": "^19.0.0"
   },
