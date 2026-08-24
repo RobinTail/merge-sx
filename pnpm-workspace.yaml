@@ -7,4 +7,5 @@ publicHoistPattern:
   - "@vitest/*" # used by vitest.config.ts
   - "react" # used by integration test
   - "react-dom" # used by integration test
+  - "@mui/system" # used by integration test
 
