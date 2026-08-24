@@ -2,6 +2,11 @@
 
 ## Version 4
 
+### v4.0.1
+
+- Reduced nesting conditions in the implementation.
+- The project migrated to PNPM.
+
 ### v4.0.0
 
 - The package is now distributed as ESM only.
