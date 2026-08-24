@@ -9,6 +9,7 @@
     "url": "https://robintail.cz"
   },
   "license": "MIT",
+  "type": "module",
   "scripts": {
     "build": "pnpm --filter merge-sx build",
     "lint": "pnpm exec biome check .",
