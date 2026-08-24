@@ -1,4 +1,6 @@
-const json = await Bun.file("bench.json", { type: "application/json" }).json();
+import { readFile } from "node:fs/promises";
+
+const json = JSON.parse(await readFile("bench.json", "utf8"));
 const data = json.files[0].groups[0];
 const suite = data.fullName.split(">")[1].trim();
 

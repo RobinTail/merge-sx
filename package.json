@@ -1,29 +1,33 @@
 {
   "private": true,
-  "workspaces": [
-    "packages/*"
-  ],
+  "packageManager": "pnpm@11.22.0",
+  "engines": {
+    "node": ">=22.18"
+  },
   "author": {
     "name": "Anna Bocharova",
     "url": "https://robintail.cz"
   },
   "license": "MIT",
+  "type": "module",
   "scripts": {
-    "build": "bun run --bun --cwd packages/merge-sx build",
-    "lint": "bun run biome check",
-    "test": "bun run --cwd packages/merge-sx test",
-    "intTest": "tsc -p packages/integration-test && bun test --filter integration-test",
-    "mdfix": "bunx --bun prettier ./**/*.md --write",
-    "version": "bun run tools/version.ts"
+    "build": "pnpm --filter merge-sx build",
+    "lint": "pnpm exec biome check .",
+    "test": "pnpm --filter merge-sx test",
+    "intTest": "tsc -p packages/integration-test && vitest run packages/integration-test",
+    "mdfix": "pnpm dlx prettier ./**/*.md --write"
   },
   "devDependencies": {
-    "@arethetypeswrong/cli": "^0.18.0",
+    "@arethetypeswrong/core": "^0.18.0",
     "@biomejs/biome": "2.5.9",
-    "@tsconfig/bun": "^1.0.7",
-    "@types/bun": "^1.2.6",
-    "@types/semver": "^7.7.0",
-    "semver": "^7.7.1",
+    "@tsconfig/node24": "^24.0.0",
+    "@types/node": "^24.0.0",
+    "@vitest/coverage-v8": "^4.0.0",
     "tsdown": "^0.22.10",
-    "typescript": "^7.0.2"
-  }
+    "typescript": "^7.0.2",
+    "vitest": "^4.0.0"
+  },
+  "workspaces": [
+    "packages/*"
+  ]
 }
