@@ -11,11 +11,11 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "build": "pnpm --filter merge-sx build",
-    "lint": "pnpm oxlint",
-    "test": "pnpm --filter merge-sx test",
+    "build": "pnpm -F merge-sx build",
+    "lint": "oxlint",
+    "test": "pnpm -F merge-sx test",
     "intTest": "tsc -p packages/integration-test && vitest run packages/integration-test",
-    "mdfix": "pnpm oxfmt './**/*.md' --write"
+    "mdfix": "oxfmt './**/*.md' --write"
   },
   "devDependencies": {
     "@arethetypeswrong/core": "^0.18.0",
