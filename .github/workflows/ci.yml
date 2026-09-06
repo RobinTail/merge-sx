@@ -38,7 +38,7 @@ jobs:
         with:
           github-token: ${{ secrets.github_token }}
       - name: Benchmark
-        run: pnpm exec vitest bench --run --outputJson bench.json
+        run: pnpm exec vitest bench --run --reporter=json --outputFile=bench.json
       - name: Benchmark processing
         id: bench
         if: github.event_name == 'pull_request'
