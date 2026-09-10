@@ -22,7 +22,7 @@
     "@tsconfig/node24": "^24.0.0",
     "@types/node": "^24.0.0",
     "@vitest/coverage-v8": "^5.0.0",
-    "oxfmt": "0.66.0",
+    "oxfmt": "0.67.0",
     "oxlint": "^1.79.0",
     "tsdown": "^0.23.0",
     "typescript": "^7.0.2",
