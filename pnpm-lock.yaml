@@ -198,16 +198,16 @@ importers:
     devDependencies:
       '@emotion/styled':
         specifier: ^11.14.0
-        version: 11.14.1(react@19.2.8)(supports-color@7.2.0)
+        version: 11.14.1(react@19.3.0)(supports-color@7.2.0)
       '@mui/material':
         specifier: ^9.0.0
-        version: 9.4.0(@emotion/styled@11.14.1(react@19.2.8)(supports-color@7.2.0))(react@19.2.8)
+        version: 9.4.0(@emotion/styled@11.14.1(react@19.3.0)(supports-color@7.2.0))(react@19.3.0)
       expect-type:
         specifier: ^1.2.0
         version: 1.4.0
       react:
         specifier: ^19.0.0
-        version: 19.2.8
+        version: 19.3.0
 
 packages:
 
@@ -1412,8 +1412,8 @@ packages:
       react: '>=16.6.0'
       react-dom: '>=16.6.0'
 
-  react@19.2.8:
-    resolution: {integrity: sha512-PWaYA1L/q9u2u7xYQi+Y3L3Yfnie7XyLeaJICV1MGD6LprsBxcAqGjYyr0eY3p+QdsA+x/Irkt4Qif8D63+Sbw==}
+  react@19.3.0:
+    resolution: {integrity: sha512-E8LUcbtBWt20bbl2YoHfx4ZDBdxVTfOKtCZn9cDSJ4l6/nuoApcpIBcj47t2wZoVX8g2ZHuMHbiShgCR1T5Sog==}
     engines: {node: '>=0.10.0'}
 
   resolve-from@4.0.0:
@@ -1790,23 +1790,23 @@ snapshots:
 
   '@emotion/sheet@1.4.0': {}
 
-  '@emotion/styled@11.14.1(react@19.2.8)(supports-color@7.2.0)':
+  '@emotion/styled@11.14.1(react@19.3.0)(supports-color@7.2.0)':
     dependencies:
       '@babel/runtime': 7.29.7
       '@emotion/babel-plugin': 11.13.5(supports-color@7.2.0)
       '@emotion/is-prop-valid': 1.4.0
       '@emotion/serialize': 1.3.3
-      '@emotion/use-insertion-effect-with-fallbacks': 1.2.0(react@19.2.8)
+      '@emotion/use-insertion-effect-with-fallbacks': 1.2.0(react@19.3.0)
       '@emotion/utils': 1.4.2
-      react: 19.2.8
+      react: 19.3.0
     transitivePeerDependencies:
       - supports-color
 
   '@emotion/unitless@0.10.0': {}
 
-  '@emotion/use-insertion-effect-with-fallbacks@1.2.0(react@19.2.8)':
+  '@emotion/use-insertion-effect-with-fallbacks@1.2.0(react@19.3.0)':
     dependencies:
-      react: 19.2.8
+      react: 19.3.0
 
   '@emotion/utils@1.4.2': {}
 
@@ -1832,32 +1832,32 @@ snapshots:
 
   '@mui/core-downloads-tracker@9.4.0': {}
 
-  '@mui/material@9.4.0(@emotion/styled@11.14.1(react@19.2.8)(supports-color@7.2.0))(react@19.2.8)':
+  '@mui/material@9.4.0(@emotion/styled@11.14.1(react@19.3.0)(supports-color@7.2.0))(react@19.3.0)':
     dependencies:
       '@babel/runtime': 7.29.7
       '@mui/core-downloads-tracker': 9.4.0
-      '@mui/system': 9.4.0(@emotion/styled@11.14.1(react@19.2.8)(supports-color@7.2.0))(react@19.2.8)
+      '@mui/system': 9.4.0(@emotion/styled@11.14.1(react@19.3.0)(supports-color@7.2.0))(react@19.3.0)
       '@mui/types': 9.4.0
-      '@mui/utils': 9.4.0(react@19.2.8)
+      '@mui/utils': 9.4.0(react@19.3.0)
       '@popperjs/core': 2.11.8
       '@types/react-transition-group': 4.4.12
       clsx: 2.1.1
       csstype: 3.2.3
       prop-types: 15.8.1
-      react: 19.2.8
+      react: 19.3.0
       react-is: 19.2.8
-      react-transition-group: 4.4.5(react@19.2.8)
+      react-transition-group: 4.4.5(react@19.3.0)
     optionalDependencies:
-      '@emotion/styled': 11.14.1(react@19.2.8)(supports-color@7.2.0)
+      '@emotion/styled': 11.14.1(react@19.3.0)(supports-color@7.2.0)
 
-  '@mui/private-theming@9.4.0(react@19.2.8)':
+  '@mui/private-theming@9.4.0(react@19.3.0)':
     dependencies:
       '@babel/runtime': 7.29.7
-      '@mui/utils': 9.4.0(react@19.2.8)
+      '@mui/utils': 9.4.0(react@19.3.0)
       prop-types: 15.8.1
-      react: 19.2.8
+      react: 19.3.0
 
-  '@mui/styled-engine@9.4.0(@emotion/styled@11.14.1(react@19.2.8)(supports-color@7.2.0))(react@19.2.8)':
+  '@mui/styled-engine@9.4.0(@emotion/styled@11.14.1(react@19.3.0)(supports-color@7.2.0))(react@19.3.0)':
     dependencies:
       '@babel/runtime': 7.29.7
       '@emotion/cache': 11.14.0
@@ -1865,36 +1865,36 @@ snapshots:
       '@emotion/sheet': 1.4.0
       csstype: 3.2.3
       prop-types: 15.8.1
-      react: 19.2.8
+      react: 19.3.0
     optionalDependencies:
-      '@emotion/styled': 11.14.1(react@19.2.8)(supports-color@7.2.0)
+      '@emotion/styled': 11.14.1(react@19.3.0)(supports-color@7.2.0)
 
-  '@mui/system@9.4.0(@emotion/styled@11.14.1(react@19.2.8)(supports-color@7.2.0))(react@19.2.8)':
+  '@mui/system@9.4.0(@emotion/styled@11.14.1(react@19.3.0)(supports-color@7.2.0))(react@19.3.0)':
     dependencies:
       '@babel/runtime': 7.29.7
-      '@mui/private-theming': 9.4.0(react@19.2.8)
-      '@mui/styled-engine': 9.4.0(@emotion/styled@11.14.1(react@19.2.8)(supports-color@7.2.0))(react@19.2.8)
+      '@mui/private-theming': 9.4.0(react@19.3.0)
+      '@mui/styled-engine': 9.4.0(@emotion/styled@11.14.1(react@19.3.0)(supports-color@7.2.0))(react@19.3.0)
       '@mui/types': 9.4.0
-      '@mui/utils': 9.4.0(react@19.2.8)
+      '@mui/utils': 9.4.0(react@19.3.0)
       clsx: 2.1.1
       csstype: 3.2.3
       prop-types: 15.8.1
-      react: 19.2.8
+      react: 19.3.0
     optionalDependencies:
-      '@emotion/styled': 11.14.1(react@19.2.8)(supports-color@7.2.0)
+      '@emotion/styled': 11.14.1(react@19.3.0)(supports-color@7.2.0)
 
   '@mui/types@9.4.0':
     dependencies:
       '@babel/runtime': 7.29.7
 
-  '@mui/utils@9.4.0(react@19.2.8)':
+  '@mui/utils@9.4.0(react@19.3.0)':
     dependencies:
       '@babel/runtime': 7.29.7
       '@mui/types': 9.4.0
       '@types/prop-types': 15.7.15
       clsx: 2.1.1
       prop-types: 15.8.1
-      react: 19.2.8
+      react: 19.3.0
       react-is: 19.2.8
 
   '@oxc-project/types@0.148.0': {}
@@ -2526,15 +2526,15 @@ snapshots:
 
   react-is@19.2.8: {}
 
-  react-transition-group@4.4.5(react@19.2.8):
+  react-transition-group@4.4.5(react@19.3.0):
     dependencies:
       '@babel/runtime': 7.29.7
       dom-helpers: 5.2.1
       loose-envify: 1.4.0
       prop-types: 15.8.1
-      react: 19.2.8
+      react: 19.3.0
 
-  react@19.2.8: {}
+  react@19.3.0: {}
 
   resolve-from@4.0.0: {}
 
