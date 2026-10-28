@@ -15,7 +15,7 @@ jobs:
       - name: Install Node
         uses: actions/setup-node@v7
         with:
-          node-version: 24
+          node-version: 26
       - uses: fregante/setup-git-user@v2
       - run: pnpm -C packages/merge-sx version patch
       - run: git push && git push --tags

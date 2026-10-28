@@ -20,7 +20,7 @@
   "devDependencies": {
     "@arethetypeswrong/core": "^0.18.0",
     "@tsconfig/node24": "^24.0.0",
-    "@types/node": "^24.0.0",
+    "@types/node": "^26.0.0",
     "@vitest/coverage-v8": "^5.0.0",
     "oxfmt": "0.74.0",
     "oxlint": "^1.79.0",
