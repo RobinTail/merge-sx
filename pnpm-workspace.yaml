@@ -3,6 +3,7 @@ packages:
 autoInstallPeers: false
 engineStrict: true
 minimumReleaseAge: 4320 # minutes (3 days)
+dedupePeers: true
 publicHoistPattern:
   - "@vitest/*" # used by vitest.config.ts
   - "react" # used by integration test
